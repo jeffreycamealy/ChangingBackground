@@ -20,6 +20,10 @@
 		001809DA171C6448002D3E93 /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 001809D8171C6448002D3E93 /* FirstViewController.xib */; };
 		001809E0171C64E4002D3E93 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 001809DE171C64E3002D3E93 /* SecondViewController.m */; };
 		001809E1171C64E4002D3E93 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 001809DF171C64E3002D3E93 /* SecondViewController.xib */; };
+		001809EB171C6764002D3E93 /* blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 001809E7171C6764002D3E93 /* blue.png */; };
+		001809EC171C6764002D3E93 /* blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 001809E8171C6764002D3E93 /* blue@2x.png */; };
+		001809ED171C6764002D3E93 /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = 001809E9171C6764002D3E93 /* green.png */; };
+		001809EE171C6764002D3E93 /* green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 001809EA171C6764002D3E93 /* green@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +46,10 @@
 		001809DD171C64E3002D3E93 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		001809DE171C64E3002D3E93 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		001809DF171C64E3002D3E93 /* SecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
+		001809E7171C6764002D3E93 /* blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue.png; sourceTree = "<group>"; };
+		001809E8171C6764002D3E93 /* blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue@2x.png"; sourceTree = "<group>"; };
+		001809E9171C6764002D3E93 /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
+		001809EA171C6764002D3E93 /* green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +96,7 @@
 		001809BE171C637E002D3E93 /* ChangingBackground */ = {
 			isa = PBXGroup;
 			children = (
+				001809EF171C6768002D3E93 /* BackgroundImages */,
 				001809D5171C63FC002D3E93 /* AppDelegate */,
 				001809DC171C6453002D3E93 /* ViewControllers */,
 				001809BF171C637E002D3E93 /* Supporting Files */,
@@ -147,6 +156,17 @@
 			name = SecondViewController;
 			sourceTree = "<group>";
 		};
+		001809EF171C6768002D3E93 /* BackgroundImages */ = {
+			isa = PBXGroup;
+			children = (
+				001809E7171C6764002D3E93 /* blue.png */,
+				001809E8171C6764002D3E93 /* blue@2x.png */,
+				001809E9171C6764002D3E93 /* green.png */,
+				001809EA171C6764002D3E93 /* green@2x.png */,
+			);
+			name = BackgroundImages;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -204,6 +224,10 @@
 				001809CF171C637E002D3E93 /* Default-568h@2x.png in Resources */,
 				001809DA171C6448002D3E93 /* FirstViewController.xib in Resources */,
 				001809E1171C64E4002D3E93 /* SecondViewController.xib in Resources */,
+				001809EB171C6764002D3E93 /* blue.png in Resources */,
+				001809EC171C6764002D3E93 /* blue@2x.png in Resources */,
+				001809ED171C6764002D3E93 /* green.png in Resources */,
+				001809EE171C6764002D3E93 /* green@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
