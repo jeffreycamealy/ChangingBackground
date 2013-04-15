@@ -16,6 +16,10 @@
 		001809CB171C637E002D3E93 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 001809CA171C637E002D3E93 /* Default.png */; };
 		001809CD171C637E002D3E93 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 001809CC171C637E002D3E93 /* Default@2x.png */; };
 		001809CF171C637E002D3E93 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 001809CE171C637E002D3E93 /* Default-568h@2x.png */; };
+		001809D9171C6448002D3E93 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 001809D7171C6448002D3E93 /* FirstViewController.m */; };
+		001809DA171C6448002D3E93 /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 001809D8171C6448002D3E93 /* FirstViewController.xib */; };
+		001809E0171C64E4002D3E93 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 001809DE171C64E3002D3E93 /* SecondViewController.m */; };
+		001809E1171C64E4002D3E93 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 001809DF171C64E3002D3E93 /* SecondViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,12 @@
 		001809CA171C637E002D3E93 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		001809CC171C637E002D3E93 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		001809CE171C637E002D3E93 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		001809D6171C6448002D3E93 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		001809D7171C6448002D3E93 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		001809D8171C6448002D3E93 /* FirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstViewController.xib; sourceTree = "<group>"; };
+		001809DD171C64E3002D3E93 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		001809DE171C64E3002D3E93 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		001809DF171C64E3002D3E93 /* SecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +88,8 @@
 		001809BE171C637E002D3E93 /* ChangingBackground */ = {
 			isa = PBXGroup;
 			children = (
-				001809C7171C637E002D3E93 /* AppDelegate.h */,
-				001809C8171C637E002D3E93 /* AppDelegate.m */,
+				001809D5171C63FC002D3E93 /* AppDelegate */,
+				001809DC171C6453002D3E93 /* ViewControllers */,
 				001809BF171C637E002D3E93 /* Supporting Files */,
 			);
 			path = ChangingBackground;
@@ -97,6 +107,44 @@
 				001809CE171C637E002D3E93 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		001809D5171C63FC002D3E93 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				001809C7171C637E002D3E93 /* AppDelegate.h */,
+				001809C8171C637E002D3E93 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		001809DB171C644A002D3E93 /* FirstViewController */ = {
+			isa = PBXGroup;
+			children = (
+				001809D6171C6448002D3E93 /* FirstViewController.h */,
+				001809D7171C6448002D3E93 /* FirstViewController.m */,
+				001809D8171C6448002D3E93 /* FirstViewController.xib */,
+			);
+			name = FirstViewController;
+			sourceTree = "<group>";
+		};
+		001809DC171C6453002D3E93 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				001809DB171C644A002D3E93 /* FirstViewController */,
+				001809E2171C650E002D3E93 /* SecondViewController */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		001809E2171C650E002D3E93 /* SecondViewController */ = {
+			isa = PBXGroup;
+			children = (
+				001809DD171C64E3002D3E93 /* SecondViewController.h */,
+				001809DE171C64E3002D3E93 /* SecondViewController.m */,
+				001809DF171C64E3002D3E93 /* SecondViewController.xib */,
+			);
+			name = SecondViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +202,8 @@
 				001809CB171C637E002D3E93 /* Default.png in Resources */,
 				001809CD171C637E002D3E93 /* Default@2x.png in Resources */,
 				001809CF171C637E002D3E93 /* Default-568h@2x.png in Resources */,
+				001809DA171C6448002D3E93 /* FirstViewController.xib in Resources */,
+				001809E1171C64E4002D3E93 /* SecondViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +216,8 @@
 			files = (
 				001809C5171C637E002D3E93 /* main.m in Sources */,
 				001809C9171C637E002D3E93 /* AppDelegate.m in Sources */,
+				001809D9171C6448002D3E93 /* FirstViewController.m in Sources */,
+				001809E0171C64E4002D3E93 /* SecondViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

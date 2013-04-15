@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  SecondViewController.h
 //  ChangingBackground
 //
 //  Created by Jeffrey Camealy on 4/15/13.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface SecondViewController : UIViewController
+
+- (IBAction)goBackButtonPressed;
 
 @end
