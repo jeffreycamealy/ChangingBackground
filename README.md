@@ -1,3 +1,6 @@
 ChangingBackground
 ==================
-![ChangingBackground](https://raw.github.com/jeffreycamealy/ChangingBackground/README_Resources/ChangingBackground.gif)
+![ChangingBackground](https://github.com/jeffreycamealy/ChangingBackground/blob/master/README_Resources/Dryv.gif?raw=true)
+![ChangingBackground](https://github.com/jeffreycamealy/ChangingBackground/blob/master/README_Resources/ChangingBackground.gif?raw=true)
+
+
