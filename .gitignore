@@ -1,2 +1,10 @@
-ChangingBackground.xcodeproj/xcuserdata/*
-ChangingBackground.xcodeproj/project.xcworkspace/*
+#
+# Xcode - Default .gitignore file
+#
+Pods/*
+Podfile.lock
+*.xcodeproj/xcuserdata/
+*.xcodeproj/project.xcworkspace/
+*.xcworkspace/
+.DS_Store
+build/*
