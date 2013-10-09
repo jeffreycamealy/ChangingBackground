@@ -23,6 +23,6 @@ below.
 ## Requirements
 1. Fork this repository
 2. Create a branch with your name
-3. Add whatever code is necessary to make your application match the demo immediately above.
+3. Add whatever code is necessary to make your application match the solution immediately above.
 4. When you have made your final commit, submit your code by sending a pull request to this repository.
 
