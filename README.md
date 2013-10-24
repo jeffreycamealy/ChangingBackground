@@ -24,6 +24,6 @@ below.
 1. Fork this repository
 2. Create a branch with your name
 3. Add whatever code is necessary to make your application match the solution immediately above.  Your code will 
-be tested on iOS 6.0.
+be tested on iOS 6.0.  There is no time limit for solving this problem.
 5. When you have made your final commit, submit your code by sending a pull request to this repository.
 
