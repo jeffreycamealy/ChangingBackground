@@ -25,6 +25,8 @@
     [super viewDidAppear:animated];
 
     UIWindow* window = [UIApplication sharedApplication].keyWindow;
+    
+    //(WW) UIImageView window subviews added in AppDelegate
     UIImageView* blueBackground = [[window subviews] objectAtIndex:0];
     UIImageView* greenBackground = [[window subviews] objectAtIndex:1];
     
