@@ -22,12 +22,12 @@
     
     UIImage* blueBackgroundImage = [UIImage imageNamed:@"blue.png"];
     UIImageView* blueBackground = [[UIImageView alloc] initWithImage:blueBackgroundImage];
-    
+    blueBackground.alpha = 0.8;
     [window addSubview:blueBackground];
     
     UIImage* greenBackgroundImage = [UIImage imageNamed:@"green.png"];
     UIImageView* greenBackground = [[UIImageView alloc] initWithImage:greenBackgroundImage];
-    greenBackground.alpha = 0.0;
+    greenBackground.alpha = 0.2;
     [window addSubview:greenBackground];
     
     //UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"blue.png"]];

@@ -34,8 +34,8 @@
     UIImageView* greenBackground = [[window subviews] objectAtIndex:1];
     
     [UIView animateWithDuration:1.5 delay:0.3 options:UIViewAnimationOptionTransitionNone animations:^{
-        blueBackground.alpha = 0.0;
-        greenBackground.alpha = 1.0;
+        blueBackground.alpha = 0.2;
+        greenBackground.alpha = 0.8;
     } completion:NULL];
     
     

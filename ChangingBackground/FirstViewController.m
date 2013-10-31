@@ -43,8 +43,8 @@
     
     if (blueBackground.alpha != 1.0) {
         [UIView animateWithDuration:1.5 delay:0.3 options:UIViewAnimationOptionTransitionNone animations:^{
-            blueBackground.alpha = 1.0;
-            greenBackground.alpha = 0.0;
+            blueBackground.alpha = 0.8;
+            greenBackground.alpha = 0.2;
         } completion:NULL];
     }
     
