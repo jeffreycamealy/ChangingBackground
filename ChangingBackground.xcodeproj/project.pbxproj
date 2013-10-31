@@ -24,6 +24,7 @@
 		001809EC171C6764002D3E93 /* blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 001809E8171C6764002D3E93 /* blue@2x.png */; };
 		001809ED171C6764002D3E93 /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = 001809E9171C6764002D3E93 /* green.png */; };
 		001809EE171C6764002D3E93 /* green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 001809EA171C6764002D3E93 /* green@2x.png */; };
+		6458B71718230A4E0079E60D /* UINavigationController+Retro.m in Sources */ = {isa = PBXBuildFile; fileRef = 6458B71618230A4E0079E60D /* UINavigationController+Retro.m */; };
 		647617291822C12B002D52E5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 647617281822C12B002D52E5 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,8 @@
 		001809E8171C6764002D3E93 /* blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue@2x.png"; sourceTree = "<group>"; };
 		001809E9171C6764002D3E93 /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
 		001809EA171C6764002D3E93 /* green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green@2x.png"; sourceTree = "<group>"; };
+		6458B71518230A4E0079E60D /* UINavigationController+Retro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Retro.h"; sourceTree = "<group>"; };
+		6458B71618230A4E0079E60D /* UINavigationController+Retro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Retro.m"; sourceTree = "<group>"; };
 		647617281822C12B002D52E5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -73,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				001809BE171C637E002D3E93 /* ChangingBackground */,
+				6458B70F182305EA0079E60D /* vendor */,
 				001809B7171C637E002D3E93 /* Frameworks */,
 				001809B6171C637E002D3E93 /* Products */,
 			);
@@ -171,6 +175,16 @@
 			name = BackgroundImages;
 			sourceTree = "<group>";
 		};
+		6458B70F182305EA0079E60D /* vendor */ = {
+			isa = PBXGroup;
+			children = (
+				6458B71518230A4E0079E60D /* UINavigationController+Retro.h */,
+				6458B71618230A4E0079E60D /* UINavigationController+Retro.m */,
+			);
+			name = vendor;
+			path = ChangingBackground;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -242,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6458B71718230A4E0079E60D /* UINavigationController+Retro.m in Sources */,
 				001809C5171C637E002D3E93 /* main.m in Sources */,
 				001809C9171C637E002D3E93 /* AppDelegate.m in Sources */,
 				001809D9171C6448002D3E93 /* FirstViewController.m in Sources */,

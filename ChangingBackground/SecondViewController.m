@@ -7,12 +7,13 @@
 //
 
 #import "SecondViewController.h"
+#import "UINavigationController+Retro.h"
 
 
 @implementation SecondViewController
 
 - (IBAction)goBackButtonPressed {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerRetro];
 }
 
 - (void) viewDidLoad {

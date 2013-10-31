@@ -10,6 +10,7 @@
 
 #import "FirstViewController.h"
 #import "SecondViewController.h"
+#import "UINavigationController+Retro.h"
 
 @interface FirstViewController ()
 
@@ -19,7 +20,7 @@
 
 - (IBAction)goForwardButtonPressed {
     SecondViewController *secondViewController = SecondViewController.new;
-    [self.navigationController pushViewController:secondViewController animated:YES];
+    [self.navigationController pushViewControllerRetro:secondViewController];
 }
 
 - (void) viewDidLoad {
@@ -35,7 +36,7 @@
     UIImageView* blueBackground = [[window subviews] objectAtIndex:0];
     UIImageView* greenBackground = [[window subviews] objectAtIndex:1];
     
-    if (blueBackground.alpha != 1.0) {
+    if (blueBackground.alpha != 0.8) {
         [UIView animateWithDuration:1.5 delay:0.3 options:UIViewAnimationOptionTransitionNone animations:^{
             blueBackground.alpha = 0.8;
             greenBackground.alpha = 0.2;
