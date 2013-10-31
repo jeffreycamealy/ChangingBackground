@@ -19,8 +19,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     window = [UIWindow.alloc initWithFrame:UIScreen.mainScreen.bounds];
-    UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"blue.png"]];
-    window.backgroundColor = background;
+    
+    UIImage* blueBackgroundImage = [UIImage imageNamed:@"blue.png"];
+    UIImageView* blueBackground = [[UIImageView alloc] initWithImage:blueBackgroundImage];
+    
+    [window addSubview:blueBackground];
+    
+    UIImage* greenBackgroundImage = [UIImage imageNamed:@"green.png"];
+    UIImageView* greenBackground = [[UIImageView alloc] initWithImage:greenBackgroundImage];
+    greenBackground.alpha = 0.0;
+    [window addSubview:greenBackground];
+    
+    //UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"blue.png"]];
+    //window.backgroundColor = background;
     [window makeKeyAndVisible];
     
     FirstViewController *firstViewController = FirstViewController.new;

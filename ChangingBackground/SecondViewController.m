@@ -23,18 +23,27 @@
 //    UIImageView* background = [[UIImageView alloc] initWithImage:backgroundImage];
 //
 //    [self.view addSubview:background];
-//    [self.view sendSubviewToBack:background];
+//    [self.view sendSubviewToBack:background]
 }
 
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 
     UIWindow* window = [UIApplication sharedApplication].keyWindow;
-    UIColor *newBackground = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"green.png"]];
+    UIImageView* blueBackground = [[window subviews] objectAtIndex:0];
+    UIImageView* greenBackground = [[window subviews] objectAtIndex:1];
     
-    [UIView animateWithDuration:1.0 delay:1.0 options:UIViewAnimationOptionTransitionNone animations:^{
-        window.backgroundColor = newBackground;
+    [UIView animateWithDuration:1.5 delay:0.3 options:UIViewAnimationOptionTransitionNone animations:^{
+        blueBackground.alpha = 0.0;
+        greenBackground.alpha = 1.0;
     } completion:NULL];
+    
+    
+//    UIColor *newBackground = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"green.png"]];
+//    
+//    [UIView animateWithDuration:1.0 delay:1.0 options:UIViewAnimationOptionTransitionNone animations:^{
+//        window.backgroundColor = newBackground;
+//    } completion:NULL];
 }
 
 @end
