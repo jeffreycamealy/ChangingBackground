@@ -16,11 +16,14 @@
 }
 
 - (void) viewDidLoad {
-    UIImage* backgroundImage = [UIImage imageNamed:@"blue.png"];
-    UIImageView* background = [[UIImageView alloc] initWithImage:backgroundImage];
+    [super viewDidLoad];
+    self.view.backgroundColor = [UIColor clearColor];
     
-    [self.view addSubview:background];
-    [self.view sendSubviewToBack:background];
+//    UIImage* backgroundImage = [UIImage imageNamed:@"blue.png"];
+//    UIImageView* background = [[UIImageView alloc] initWithImage:backgroundImage];
+//    
+//    [self.view addSubview:background];
+//    [self.view sendSubviewToBack:background];
 }
 
 
