@@ -20,4 +20,13 @@
     [self.navigationController pushViewController:secondViewController animated:YES];
 }
 
+- (void) viewDidLoad {
+    UIImage* backgroundImage = [UIImage imageNamed:@"blue.png"];
+    UIImageView* background = [[UIImageView alloc] initWithImage:backgroundImage];
+    
+    [self.view addSubview:background];
+    [self.view sendSubviewToBack:background];
+    
+}
+
 @end
