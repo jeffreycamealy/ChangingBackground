@@ -13,10 +13,15 @@
 
 @end
 
-@implementation FirstViewController
+@implementation FirstViewController {
+    
+    __weak IBOutlet UIView *transitionBackgroundView;
+}
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewDidLoad {
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"blue.png"]];
+    transitionBackgroundView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"green.png"]];
+    [transitionBackgroundView setAlpha:0];
 }
 
 - (IBAction)goForwardButtonPressed {

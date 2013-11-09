@@ -9,10 +9,24 @@
 #import "SecondViewController.h"
 
 
-@implementation SecondViewController
+@implementation SecondViewController {
+    
+    __weak IBOutlet UIView *transitionBackgroundView;
+}
+
+- (void)viewDidLoad {
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"green.png"]];
+    transitionBackgroundView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"blue.png"]];
+}
 
 - (void)viewWillAppear:(BOOL)animated {
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"green.png"]];
+    [transitionBackgroundView setAlpha:1];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [UIView animateWithDuration:1.0f animations:^{
+        [transitionBackgroundView setAlpha:0];
+    }];
 }
 
 - (IBAction)goBackButtonPressed {
