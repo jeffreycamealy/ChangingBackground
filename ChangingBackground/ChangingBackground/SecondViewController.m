@@ -11,6 +11,10 @@
 
 @implementation SecondViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"green.png"]];
+}
+
 - (IBAction)goBackButtonPressed {
     [self.navigationController popViewControllerAnimated:YES];
 }
