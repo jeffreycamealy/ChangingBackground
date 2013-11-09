@@ -14,18 +14,27 @@
 @end
 
 @implementation FirstViewController {
-    
-    __weak IBOutlet UIView *transitionBackgroundView;
+    SecondViewController            *secondViewController;
+    __weak IBOutlet UIView          *transitionBackgroundView;
 }
 
 - (void)viewDidLoad {
+    secondViewController = [[SecondViewController alloc] init];
+    secondViewController.delegate = self;
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"blue.png"]];
     transitionBackgroundView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"green.png"]];
     [transitionBackgroundView setAlpha:0];
 }
 
+#pragma mark ChangeBackgroundColorDelegate
+- (void)changeBackgoundColor {
+    [transitionBackgroundView setAlpha:1];
+    [UIView animateWithDuration:1.0f animations:^{
+        [transitionBackgroundView setAlpha:0];
+    }];
+}
+
 - (IBAction)goForwardButtonPressed {
-    SecondViewController *secondViewController = SecondViewController.new;
     [self.navigationController pushViewController:secondViewController animated:YES];
 }
 

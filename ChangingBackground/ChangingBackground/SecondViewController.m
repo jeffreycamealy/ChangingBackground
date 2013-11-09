@@ -31,6 +31,7 @@
 
 - (IBAction)goBackButtonPressed {
     [self.navigationController popViewControllerAnimated:YES];
+    [_delegate changeBackgoundColor];
 }
 
 @end

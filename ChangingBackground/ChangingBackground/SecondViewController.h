@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ChangeBackgroundColorDelegate.h"
 
 @interface SecondViewController : UIViewController
+
+@property (strong, nonatomic) id <ChangeBackgroundColorDelegate> delegate;
 
 - (IBAction)goBackButtonPressed;
 

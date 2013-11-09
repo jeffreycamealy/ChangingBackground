@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ChangeBackgroundColorDelegate.h"
 
-@interface FirstViewController : UIViewController
+@interface FirstViewController : UIViewController <ChangeBackgroundColorDelegate>
 
 - (IBAction)goForwardButtonPressed;
 
