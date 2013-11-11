@@ -24,6 +24,8 @@
 		001809EC171C6764002D3E93 /* blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 001809E8171C6764002D3E93 /* blue@2x.png */; };
 		001809ED171C6764002D3E93 /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = 001809E9171C6764002D3E93 /* green.png */; };
 		001809EE171C6764002D3E93 /* green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 001809EA171C6764002D3E93 /* green@2x.png */; };
+		E4152A9B1831256600603A26 /* UIViewController+CBCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = E4152A9A1831256600603A26 /* UIViewController+CBCategory.m */; };
+		E4AA9050182E68FC00525168 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4AA904F182E68FC00525168 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,9 @@
 		001809E8171C6764002D3E93 /* blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue@2x.png"; sourceTree = "<group>"; };
 		001809E9171C6764002D3E93 /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
 		001809EA171C6764002D3E93 /* green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green@2x.png"; sourceTree = "<group>"; };
+		E4152A991831256600603A26 /* UIViewController+CBCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CBCategory.h"; sourceTree = "<group>"; };
+		E4152A9A1831256600603A26 /* UIViewController+CBCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CBCategory.m"; sourceTree = "<group>"; };
+		E4AA904F182E68FC00525168 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4AA9050182E68FC00525168 /* QuartzCore.framework in Frameworks */,
 				001809B9171C637E002D3E93 /* UIKit.framework in Frameworks */,
 				001809BB171C637E002D3E93 /* Foundation.framework in Frameworks */,
 				001809BD171C637E002D3E93 /* CoreGraphics.framework in Frameworks */,
@@ -69,6 +75,8 @@
 		001809AC171C637E002D3E93 = {
 			isa = PBXGroup;
 			children = (
+				E4152A991831256600603A26 /* UIViewController+CBCategory.h */,
+				E4152A9A1831256600603A26 /* UIViewController+CBCategory.m */,
 				001809BE171C637E002D3E93 /* ChangingBackground */,
 				001809B7171C637E002D3E93 /* Frameworks */,
 				001809B6171C637E002D3E93 /* Products */,
@@ -86,6 +94,7 @@
 		001809B7171C637E002D3E93 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E4AA904F182E68FC00525168 /* QuartzCore.framework */,
 				001809B8171C637E002D3E93 /* UIKit.framework */,
 				001809BA171C637E002D3E93 /* Foundation.framework */,
 				001809BC171C637E002D3E93 /* CoreGraphics.framework */,
@@ -241,6 +250,7 @@
 				001809C5171C637E002D3E93 /* main.m in Sources */,
 				001809C9171C637E002D3E93 /* AppDelegate.m in Sources */,
 				001809D9171C6448002D3E93 /* FirstViewController.m in Sources */,
+				E4152A9B1831256600603A26 /* UIViewController+CBCategory.m in Sources */,
 				001809E0171C64E4002D3E93 /* SecondViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,6 +331,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChangingBackground/ChangingBackground-Prefix.pch";
 				INFOPLIST_FILE = "ChangingBackground/ChangingBackground-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -332,6 +343,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChangingBackground/ChangingBackground-Prefix.pch";
 				INFOPLIST_FILE = "ChangingBackground/ChangingBackground-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -356,6 +368,7 @@
 				001809D4171C637E002D3E93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
