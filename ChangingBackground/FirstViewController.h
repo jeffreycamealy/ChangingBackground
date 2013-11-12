@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
 @interface FirstViewController : UIViewController
 
 - (IBAction)goForwardButtonPressed;
+@property(strong, nonatomic) AppDelegate *delegate;
 @property (weak, nonatomic) IBOutlet UIButton *goForwardButton;
 @property (weak, nonatomic) IBOutlet UILabel *homeViewControllerLabel;
 

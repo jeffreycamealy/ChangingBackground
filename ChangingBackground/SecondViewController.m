@@ -7,7 +7,8 @@
 //
 
 #import "SecondViewController.h"
-#import "AppDelegate.h"
+#import "FirstViewController.h"
+
 
 
 

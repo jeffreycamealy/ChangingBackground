@@ -13,6 +13,7 @@
 
 
 @implementation FirstViewController
+AppDelegate *delegate;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,7 +40,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 
     [UIView transitionWithView:delegate.background duration:2.0f options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
 
