@@ -11,5 +11,7 @@
 @interface FirstViewController : UIViewController
 
 - (IBAction)goForwardButtonPressed;
+@property (weak, nonatomic) IBOutlet UIButton *goForwardButton;
+@property (weak, nonatomic) IBOutlet UILabel *homeViewControllerLabel;
 
 @end

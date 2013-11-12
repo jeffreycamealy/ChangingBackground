@@ -12,4 +12,7 @@
 
 - (IBAction)goBackButtonPressed;
 
+@property (weak, nonatomic) IBOutlet UIButton *goBackButton;
+@property (weak, nonatomic) IBOutlet UILabel *secondViewControllerLabel;
+
 @end

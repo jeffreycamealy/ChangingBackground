@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "FirstViewController.h"
 
+
 @interface AppDelegate () {
     UIWindow *window;
 }
@@ -18,12 +19,19 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+
     window = [UIWindow.alloc initWithFrame:UIScreen.mainScreen.bounds];
+
     [window makeKeyAndVisible];
-    
+
+    _background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"blue"]];
+
+    [window addSubview:_background];
     FirstViewController *firstViewController = FirstViewController.new;
     UINavigationController *navigationController = [UINavigationController.alloc initWithRootViewController:firstViewController];
     [navigationController setNavigationBarHidden:YES];
+
 
     window.rootViewController = navigationController;
     
