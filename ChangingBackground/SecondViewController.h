@@ -10,6 +10,9 @@
 
 @interface SecondViewController : UIViewController
 
+@property NSString *backgroundName;
+
 - (IBAction)goBackButtonPressed;
+- (void)backgroundFade;
 
 @end

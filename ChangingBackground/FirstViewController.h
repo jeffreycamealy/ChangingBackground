@@ -10,6 +10,10 @@
 
 @interface FirstViewController : UIViewController
 
+@property NSString *backgroundName;
+@property UIImageView *backgroundImageBlue;
+@property UIImageView *backgroundImageGreen;
+
 - (IBAction)goForwardButtonPressed;
 
 @end
