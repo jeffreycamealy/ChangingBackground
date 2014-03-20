@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface FirstViewController : UIViewController <UINavigationControllerDelegate>
 
 @property NSString *backgroundName;
 @property UIImageView *backgroundImageBlue;

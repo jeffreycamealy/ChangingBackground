@@ -8,6 +8,7 @@
 
 #import "FirstViewController.h"
 #import "SecondViewController.h"
+#import "BackgroundNavigationViewController.h"
 
 @interface FirstViewController ()
 //@property SecondViewController *secondViewController;
@@ -27,14 +28,27 @@
 {
     [super viewWillAppear:animated];
     
-    [self backgroundFade];
+    //[self backgroundFade];
 }
 
 - (IBAction)goForwardButtonPressed {
     SecondViewController *secondViewController = SecondViewController.new;
     [self.navigationController pushViewController:secondViewController animated:YES];
-    [self backgroundFade];
     //_backgroundImageGreen.alpha = 0.0;
+}
+
+-(void)navigationController:(BackgroundNavigationViewController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    UIImageView *backgroundImageGreen = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"green"]];
+    [self.view addSubview:backgroundImageGreen];
+    backgroundImageGreen.alpha = 0.0;
+    [self.view sendSubviewToBack:backgroundImageGreen];
+    
+    [UIImageView animateWithDuration:5.0 animations:^{
+        backgroundImageGreen.alpha = 1;
+    } completion:^(BOOL finished) {
+        //[self.view removeFromSuperview];
+    }];
 }
 
 - (void)backgroundFade

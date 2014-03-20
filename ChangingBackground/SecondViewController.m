@@ -15,7 +15,7 @@
 {
     [super viewWillAppear:animated];
     
-    [self backgroundFade];
+    //[self backgroundFade];
 }
 
 - (IBAction)goBackButtonPressed
