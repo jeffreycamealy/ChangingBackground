@@ -21,6 +21,8 @@
     window = [UIWindow.alloc initWithFrame:UIScreen.mainScreen.bounds];
     [window makeKeyAndVisible];
     
+    [self addBackground];
+    
     FirstViewController *firstViewController = FirstViewController.new;
     UINavigationController *navigationController = [UINavigationController.alloc initWithRootViewController:firstViewController];
     [navigationController setNavigationBarHidden:YES];
@@ -28,6 +30,11 @@
     window.rootViewController = navigationController;
     
     return YES;
+}
+
+- (void)addBackground {
+    self.backgroundImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"blue"]];
+    [window addSubview:self.backgroundImageView];
 }
 
 @end

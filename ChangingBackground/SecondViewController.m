@@ -7,12 +7,42 @@
 //
 
 #import "SecondViewController.h"
-
+#import "AppDelegate.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation SecondViewController
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self updateBackgroundColor];
+}
+
+
+- (void)updateBackgroundColor {
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    dispatch_block_t animationBlock = ^{
+        delegate.backgroundImageView.image = [UIImage imageNamed:@"green"];
+    };
+    
+    [UIView transitionWithView:delegate.backgroundImageView
+                      duration:kColorChangingDuration
+                       options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:animationBlock
+                    completion:nil];
+}
+
 - (IBAction)goBackButtonPressed {
-    [self.navigationController popViewControllerAnimated:YES];
+    CATransition* transition = [CATransition animation];
+    
+    transition.duration = kPushAnimationDuration;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionPush;
+    transition.subtype = kCATransitionFromLeft;
+    
+    [self.navigationController.view.layer addAnimation:transition forKey:nil];
+    [self.navigationController popToRootViewControllerAnimated:NO];
 }
 
 @end

@@ -10,4 +10,6 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
+@property (nonatomic, strong) UIImageView *backgroundImageView;
+
 @end
