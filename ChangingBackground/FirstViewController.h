@@ -8,11 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController <UINavigationControllerDelegate>
-
-@property NSString *backgroundName;
-@property UIImageView *backgroundImageBlue;
-@property UIImageView *backgroundImageGreen;
+@interface FirstViewController : UIViewController
 
 - (IBAction)goForwardButtonPressed;
 

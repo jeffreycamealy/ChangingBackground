@@ -25,7 +25,6 @@
     FirstViewController *firstViewController = FirstViewController.new;
     BackgroundNavigationViewController *navigationController = [BackgroundNavigationViewController.alloc initWithRootViewController:firstViewController];
     [navigationController setNavigationBarHidden:YES];
-    //navigationController.view.backgroundColor = [UIColor redColor];
 
     window.rootViewController = navigationController;
     

@@ -10,7 +10,12 @@
 
 @interface BackgroundNavigationViewController ()
 
-@property NSString *backgroundName;
+//@property NSString *backgroundNameShowing;
+//@property NSString *backgroundNameHiding;
+
+@property UIImageView *backgroundImageBlue;
+@property UIImageView *backgroundImageGreen;
+@property BOOL isBlueShowing;
 
 @end
 
@@ -20,26 +25,44 @@
 {
     [super viewDidLoad];
     
-    _backgroundName = @"blue";
-    /*
-    UIImageView *backgroundImageBlue = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"blue"]];
-    [self.view addSubview:backgroundImageBlue];
-    [self.view sendSubviewToBack:backgroundImageBlue];
-     */
+    self.delegate = self;
+    
+    _backgroundImageBlue = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"blue"]];
+    [self.view addSubview:_backgroundImageBlue];
+    
+    _backgroundImageGreen = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"green"]];
+    [self.view addSubview:_backgroundImageGreen];
+    _backgroundImageGreen.alpha = 0.0;
+    [self.view sendSubviewToBack:_backgroundImageGreen];
+    [self.view sendSubviewToBack:_backgroundImageBlue];
+    _isBlueShowing = NO;
 }
 
 -(void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    UIImageView *backgroundImageGreen = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"green"]];
-    [self.view addSubview:backgroundImageGreen];
-    backgroundImageGreen.alpha = 0.0;
-    [self.view sendSubviewToBack:backgroundImageGreen];
-    
-    [UIImageView animateWithDuration:5.0 animations:^{
-        backgroundImageGreen.alpha = 1;
-    } completion:^(BOOL finished) {
-        //[self.view removeFromSuperview];
-    }];
+
+    if (_isBlueShowing == YES)
+    {
+        [UIImageView animateWithDuration:5.0 animations:^{
+            _backgroundImageGreen.alpha = 1;
+        } completion:^(BOOL finished)
+         {
+             _backgroundImageBlue.alpha = 0.0;
+             [self.view sendSubviewToBack:_backgroundImageGreen];
+             _isBlueShowing = NO;
+         }];
+    }
+    else
+    {
+        [UIImageView animateWithDuration:5.0 animations:^{
+            _backgroundImageBlue.alpha = 1;
+        } completion:^(BOOL finished)
+         {
+             _backgroundImageGreen.alpha = 0.0;
+             [self.view sendSubviewToBack:_backgroundImageBlue];
+             _isBlueShowing = YES;
+         }];
+    }
 }
 
 @end
