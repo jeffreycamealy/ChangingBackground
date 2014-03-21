@@ -24,6 +24,7 @@
 		001809EC171C6764002D3E93 /* blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 001809E8171C6764002D3E93 /* blue@2x.png */; };
 		001809ED171C6764002D3E93 /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = 001809E9171C6764002D3E93 /* green.png */; };
 		001809EE171C6764002D3E93 /* green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 001809EA171C6764002D3E93 /* green@2x.png */; };
+		C92290E118DA4399001CA299 /* BackgroundNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C92290E018DA4399001CA299 /* BackgroundNavigationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,8 @@
 		001809E8171C6764002D3E93 /* blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue@2x.png"; sourceTree = "<group>"; };
 		001809E9171C6764002D3E93 /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
 		001809EA171C6764002D3E93 /* green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green@2x.png"; sourceTree = "<group>"; };
+		C92290DF18DA4399001CA299 /* BackgroundNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundNavigationViewController.h; sourceTree = "<group>"; };
+		C92290E018DA4399001CA299 /* BackgroundNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundNavigationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +155,8 @@
 				001809DD171C64E3002D3E93 /* SecondViewController.h */,
 				001809DE171C64E3002D3E93 /* SecondViewController.m */,
 				001809DF171C64E3002D3E93 /* SecondViewController.xib */,
+				C92290DF18DA4399001CA299 /* BackgroundNavigationViewController.h */,
+				C92290E018DA4399001CA299 /* BackgroundNavigationViewController.m */,
 			);
 			name = SecondViewController;
 			sourceTree = "<group>";
@@ -238,6 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C92290E118DA4399001CA299 /* BackgroundNavigationViewController.m in Sources */,
 				001809C5171C637E002D3E93 /* main.m in Sources */,
 				001809C9171C637E002D3E93 /* AppDelegate.m in Sources */,
 				001809D9171C6448002D3E93 /* FirstViewController.m in Sources */,
@@ -356,6 +362,7 @@
 				001809D4171C637E002D3E93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
