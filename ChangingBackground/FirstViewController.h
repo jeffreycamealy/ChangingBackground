@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface FirstViewController : UIViewController
-
+{
+    bool firstTime;   
+}
+@property (weak, nonatomic) IBOutlet UIImageView *imgViewBackground;
 - (IBAction)goForwardButtonPressed;
 
 @end
