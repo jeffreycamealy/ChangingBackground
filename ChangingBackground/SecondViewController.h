@@ -11,5 +11,6 @@
 @interface SecondViewController : UIViewController
 
 - (IBAction)goBackButtonPressed;
+@property (weak, nonatomic) IBOutlet UIImageView *imgViewBackground;
 
 @end
