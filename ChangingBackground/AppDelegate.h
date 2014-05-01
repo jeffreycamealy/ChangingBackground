@@ -10,4 +10,7 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
+- (void)fadeFromBlueToGreenImage;
+- (void)fadeFromGreenToBlueImage;
+
 @end

@@ -7,12 +7,14 @@
 //
 
 #import "SecondViewController.h"
-
+#import "UINavigationController+CustomTransition.h"
 
 @implementation SecondViewController
 
 - (IBAction)goBackButtonPressed {
-    [self.navigationController popViewControllerAnimated:YES];
+    //Using the customTransiton method from UINavigationController's CustomTransition category
+    [self.navigationController popViewControllerWithCustomTansition];
+    [APPDELEGATE fadeFromGreenToBlueImage];
 }
 
 @end
