@@ -8,6 +8,7 @@
 
 #import "FirstViewController.h"
 #import "SecondViewController.h"
+#import "UINavigationController+CustomTransition.h"
 
 @interface FirstViewController ()
 
@@ -17,7 +18,11 @@
 
 - (IBAction)goForwardButtonPressed {
     SecondViewController *secondViewController = SecondViewController.new;
-    [self.navigationController pushViewController:secondViewController animated:YES];
+    
+    //Using the customTransiton method from UINavigationController's CustomTransition category
+    [self.navigationController pushViewControllerWithCustomTansition:secondViewController];
+    
+    [APPDELEGATE fadeFromBlueToGreenImage];
 }
 
 @end
