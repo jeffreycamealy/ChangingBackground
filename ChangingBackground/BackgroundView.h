@@ -16,14 +16,4 @@
 
 - (void) animatingTheForegroundImagewithmage : (UIImage *) image;
 
-
-/*
-
-
- @property CGFloat *foregroundAlpha; // private
-
- - (void)setForegroundAlphaTo:(CGFloat)alpha animated:(BOOL)animated;
- 
- */
-
 @end

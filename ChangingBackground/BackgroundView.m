@@ -28,18 +28,6 @@
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
-    self = [super initWithCoder:aDecoder];
-
-    if (self) {
-
-
-    }
-    return self;
-
-}
-
-
 - (void)setBackgroundImage:(UIImage *)backgroundImage {
 
     self.backgroundImageView.image = backgroundImage;
@@ -51,11 +39,11 @@
     self.foregroundImageView.image = image;
 
     CABasicAnimation *theAnimation;
-    //within the animation we will adjust the "opacity"
-    //value of the layer
+    //within the animation we will adjust the "opacity"value of the layer
+
     theAnimation=[CABasicAnimation animationWithKeyPath:@"opacity"];
-    //animation lasts 0.4 seconds
-    theAnimation.duration=2;
+    theAnimation.duration=1.5;
+
     //justify the opacity as you like (1=fully visible, 0=unvisible)
     theAnimation.fromValue=[NSNumber numberWithFloat:0.0];
     theAnimation.toValue=[NSNumber numberWithFloat:1.0];
@@ -67,13 +55,5 @@
 }
 
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end
