@@ -20,8 +20,11 @@
 - (void)viewWillAppear:(BOOL)animated {
 
     [super viewWillAppear:YES];
-    self.myView.backgroundImage = [UIImage imageNamed:@"blue@2x.png"];
+    self.myView.backgroundImage = [UIImage imageNamed:@"green@2x.png"];
 
+    // code for animating the foreground image
+
+    [self.myView animatingTheForegroundImagewithmage:[UIImage imageNamed:@"blue@2x.png"]];
 
 
 }

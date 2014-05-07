@@ -8,9 +8,11 @@
 
 #import "BackgroundView.h"
 
+
 @interface BackgroundView ()
 @property (nonatomic, strong) IBOutlet UIImageView *backgroundImageView;
 @property (nonatomic, strong) IBOutlet UIImageView *foregroundImageView;
+
 
 @end
 
@@ -35,9 +37,6 @@
     }
     return self;
 
-
-
-
 }
 
 
@@ -45,6 +44,26 @@
 
     self.backgroundImageView.image = backgroundImage;
 
+}
+
+- (void) animatingTheForegroundImagewithmage : (UIImage *) image {
+
+    self.foregroundImageView.image = image;
+
+    CABasicAnimation *theAnimation;
+    //within the animation we will adjust the "opacity"
+    //value of the layer
+    theAnimation=[CABasicAnimation animationWithKeyPath:@"opacity"];
+    //animation lasts 0.4 seconds
+    theAnimation.duration=2;
+    //justify the opacity as you like (1=fully visible, 0=unvisible)
+    theAnimation.fromValue=[NSNumber numberWithFloat:0.0];
+    theAnimation.toValue=[NSNumber numberWithFloat:1.0];
+    [self.foregroundImageView.layer addAnimation:theAnimation
+                                                 forKey:@"animateOpacity"];
+
+
+    
 }
 
 

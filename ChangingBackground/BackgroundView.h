@@ -14,6 +14,9 @@
 @property (nonatomic, strong) UIImage *foregroundImage;
 
 
+- (void) animatingTheForegroundImagewithmage : (UIImage *) image;
+
+
 /*
 
 
