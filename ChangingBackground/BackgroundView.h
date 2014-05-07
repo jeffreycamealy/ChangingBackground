@@ -10,8 +10,8 @@
 
 @interface BackgroundView : UIView
 
-@property UIImage *backgroundImage;
-@property UIImage *foregroundImage;
+@property (nonatomic, strong) UIImage *backgroundImage;
+@property (nonatomic, strong) UIImage *foregroundImage;
 
 
 /*

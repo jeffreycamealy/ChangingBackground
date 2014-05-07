@@ -8,8 +8,10 @@
 
 #import "FirstViewController.h"
 #import "SecondViewController.h"
+#import "BackgroundView.h"
 
 @interface FirstViewController ()
+@property (strong, nonatomic) IBOutlet BackgroundView *myView;
 
 @end
 
@@ -18,8 +20,7 @@
 - (void)viewWillAppear:(BOOL)animated {
 
     [super viewWillAppear:YES];
-    
-
+    self.myView.backgroundImage = [UIImage imageNamed:@"blue@2x.png"];
 
 
 

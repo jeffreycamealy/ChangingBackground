@@ -8,17 +8,48 @@
 
 #import "BackgroundView.h"
 
+@interface BackgroundView ()
+@property (nonatomic, strong) IBOutlet UIImageView *backgroundImageView;
+@property (nonatomic, strong) UIImageView *foregroundImageView;
+
+@end
+
 @implementation BackgroundView
+@synthesize backgroundImage;
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
-    }
+
+     }
     return self;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+
+    if (self) {
+        self.backgroundImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 320, 535)];
+
+        self.foregroundImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 320, 535)];
+
+        [self addSubview:self.backgroundImageView];
+        [self addSubview:self.foregroundImageView];
+    }
+    return self;
+
+
+
+
+}
+
+
+- (void)setBackgroundImage:(UIImage *)backgroundImage {
+
+    self.backgroundImageView.image = backgroundImage;
+
+}
 
 
 /*
