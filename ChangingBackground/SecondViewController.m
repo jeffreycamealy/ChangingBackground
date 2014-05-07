@@ -13,6 +13,7 @@
 @interface SecondViewController()
 
 @property (strong, nonatomic) IBOutlet BackgroundView *myView;
+@property (strong, nonatomic) IBOutlet UIButton *goBackButton;
 
 @end
 
@@ -20,6 +21,11 @@
 @implementation SecondViewController
 
 - (void)viewWillAppear:(BOOL)animated {
+
+      // making the corners of the button round
+
+    self.goBackButton.layer.cornerRadius = 10.0;
+    self.goBackButton.clipsToBounds = NO;
 
     [super viewWillAppear:YES];
     self.myView.backgroundImage = [UIImage imageNamed:@"blue@2x.png"];

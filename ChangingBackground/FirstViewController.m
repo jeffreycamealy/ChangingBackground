@@ -12,12 +12,18 @@
 
 @interface FirstViewController ()
 @property (strong, nonatomic) IBOutlet BackgroundView *myView;
+@property (strong, nonatomic) IBOutlet UIButton *goForwardButton;
 
 @end
 
 @implementation FirstViewController
 
 - (void)viewWillAppear:(BOOL)animated {
+
+    // making the corners of the button round
+
+    self.goForwardButton.layer.cornerRadius = 10.0;
+    self.goForwardButton.clipsToBounds = YES;
 
     [super viewWillAppear:YES];
     self.myView.backgroundImage = [UIImage imageNamed:@"green@2x.png"];
