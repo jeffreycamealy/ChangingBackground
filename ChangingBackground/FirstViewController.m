@@ -10,13 +10,17 @@
 #import "SecondViewController.h"
 
 @interface FirstViewController ()
+<<<<<<< HEAD
 @property (weak, nonatomic) IBOutlet UIButton *goForwardButton;
 @property (weak, nonatomic) IBOutlet UILabel *viewControllerLabel;
+=======
+>>>>>>> 9f533f8176d1813d633bdf824033d972d70ea3d2
 
 @end
 
 @implementation FirstViewController
 
+<<<<<<< HEAD
 -(void)viewWillAppear:(BOOL)animated
 {
     [UIView animateWithDuration:.25 animations:^{
@@ -63,6 +67,11 @@
     }];
     [self.navigationController pushViewController:secondViewController animated:YES];
 
+=======
+- (IBAction)goForwardButtonPressed {
+    SecondViewController *secondViewController = SecondViewController.new;
+    [self.navigationController pushViewController:secondViewController animated:YES];
+>>>>>>> 9f533f8176d1813d633bdf824033d972d70ea3d2
 }
 
 @end
