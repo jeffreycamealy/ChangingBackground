@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BackgroundImage : UIView
+@interface BackgroundView : UIView
 
 @property UIImage *backgroundImage;
 @property UIImage *foregroundImage;
+
 
 /*
 

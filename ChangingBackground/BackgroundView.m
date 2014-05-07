@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Ora Interactive. All rights reserved.
 //
 
-#import "BackgroundImage.h"
+#import "BackgroundView.h"
 
-@implementation BackgroundImage
+@implementation BackgroundView
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -18,6 +18,8 @@
     }
     return self;
 }
+
+
 
 /*
 // Only override drawRect: if you perform custom drawing.

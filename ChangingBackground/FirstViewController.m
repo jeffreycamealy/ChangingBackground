@@ -15,10 +15,19 @@
 
 @implementation FirstViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+
+    [super viewWillAppear:YES];
+    
+
+
+
+
+}
+
 - (IBAction)goForwardButtonPressed {
     SecondViewController *secondViewController = SecondViewController.new;
     [self.navigationController pushViewController:secondViewController animated:YES];
-// set Green
 
 }
 
