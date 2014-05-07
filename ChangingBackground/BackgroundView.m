@@ -10,7 +10,7 @@
 
 @interface BackgroundView ()
 @property (nonatomic, strong) IBOutlet UIImageView *backgroundImageView;
-@property (nonatomic, strong) UIImageView *foregroundImageView;
+@property (nonatomic, strong) IBOutlet UIImageView *foregroundImageView;
 
 @end
 
@@ -30,12 +30,8 @@
     self = [super initWithCoder:aDecoder];
 
     if (self) {
-        self.backgroundImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 320, 535)];
 
-        self.foregroundImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 320, 535)];
 
-        [self addSubview:self.backgroundImageView];
-        [self addSubview:self.foregroundImageView];
     }
     return self;
 

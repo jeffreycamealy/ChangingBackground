@@ -20,6 +20,10 @@
                     <rect key="frame" x="0.0" y="-6" width="320" height="574"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="u9C-nU-76T">
+                    <rect key="frame" x="0.0" y="0.0" width="325" height="563"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Home View Controller" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4">
                     <rect key="frame" x="77" y="115" width="174" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -43,6 +47,7 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <connections>
                 <outlet property="backgroundImageView" destination="748-Ja-kmJ" id="Dy3-dp-w8u"/>
+                <outlet property="foregroundImageView" destination="u9C-nU-76T" id="5SL-Rc-SdU"/>
             </connections>
         </view>
     </objects>
