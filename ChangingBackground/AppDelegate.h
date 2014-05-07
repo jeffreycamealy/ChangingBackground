@@ -10,9 +10,4 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 9f533f8176d1813d633bdf824033d972d70ea3d2
 @end

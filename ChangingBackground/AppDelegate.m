@@ -8,10 +8,8 @@
 
 #import "AppDelegate.h"
 #import "FirstViewController.h"
-<<<<<<< HEAD
 #import "SecondViewController.h"
-=======
->>>>>>> 9f533f8176d1813d633bdf824033d972d70ea3d2
+
 
 @interface AppDelegate () {
     UIWindow *window;
@@ -26,7 +24,7 @@
     [window makeKeyAndVisible];
     
     FirstViewController *firstViewController = FirstViewController.new;
-<<<<<<< HEAD
+
     firstViewController.view.backgroundColor = [UIColor clearColor];
     UINavigationController *navigationController = [UINavigationController.alloc initWithRootViewController:firstViewController];
     [navigationController setNavigationBarHidden:YES];
@@ -35,19 +33,8 @@
     UIImageView* backGround = [[UIImageView alloc]initWithImage:backGroundImage];
     [window addSubview:backGround];
     window.rootViewController = navigationController;
-
-=======
-    UINavigationController *navigationController = [UINavigationController.alloc initWithRootViewController:firstViewController];
-    [navigationController setNavigationBarHidden:YES];
-
-    window.rootViewController = navigationController;
->>>>>>> 9f533f8176d1813d633bdf824033d972d70ea3d2
     
     return YES;
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 9f533f8176d1813d633bdf824033d972d70ea3d2
 @end

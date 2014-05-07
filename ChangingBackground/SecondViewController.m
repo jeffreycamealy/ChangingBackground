@@ -11,7 +11,6 @@
 
 @implementation SecondViewController
 
-<<<<<<< HEAD
 
 -(void)viewDidAppear:(BOOL)animated{
     
@@ -37,8 +36,6 @@
     }];
 }
 
-=======
->>>>>>> 9f533f8176d1813d633bdf824033d972d70ea3d2
 - (IBAction)goBackButtonPressed {
     [self.navigationController popViewControllerAnimated:YES];
 }
