@@ -10,12 +10,22 @@
 #import "SecondViewController.h"
 
 @interface FirstViewController ()
+{
+    UIImageView *imageView;
+}
 
 @end
 
 @implementation FirstViewController
 
-- (IBAction)goForwardButtonPressed {
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.view.backgroundColor = [UIColor clearColor];
+}
+
+- (IBAction)goForwardButtonPressed
+{
     SecondViewController *secondViewController = SecondViewController.new;
     [self.navigationController pushViewController:secondViewController animated:YES];
 }
