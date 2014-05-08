@@ -11,9 +11,7 @@
 @interface BackgroundView : UIView
 
 @property (nonatomic, strong) UIImage *backgroundImage;
-@property (nonatomic, strong) UIImage *foregroundImage;
 
-
-- (void) animatingTheForegroundImagewithmage : (UIImage *) image;
+- (void) animatingTheForegroundImagewithImage : (UIImage *) image;
 
 @end

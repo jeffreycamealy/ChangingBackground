@@ -17,7 +17,6 @@
 @end
 
 @implementation BackgroundView
-@synthesize backgroundImage;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -34,17 +33,19 @@
 
 }
 
-- (void) animatingTheForegroundImagewithmage : (UIImage *) image {
+- (void) animatingTheForegroundImagewithImage : (UIImage *) image {
 
     self.foregroundImageView.image = image;
 
     CABasicAnimation *theAnimation;
+
     //within the animation we will adjust the "opacity"value of the layer
 
     theAnimation=[CABasicAnimation animationWithKeyPath:@"opacity"];
     theAnimation.duration=1.5;
 
-    //justify the opacity as you like (1=fully visible, 0=unvisible)
+    //changing the opacity (1=fully visible, 0=unvisible)
+    
     theAnimation.fromValue=[NSNumber numberWithFloat:0.0];
     theAnimation.toValue=[NSNumber numberWithFloat:1.0];
     [self.foregroundImageView.layer addAnimation:theAnimation
