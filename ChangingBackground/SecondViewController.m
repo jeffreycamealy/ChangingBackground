@@ -8,10 +8,16 @@
 
 #import "SecondViewController.h"
 
-
 @implementation SecondViewController
 
-- (IBAction)goBackButtonPressed {
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.view.backgroundColor = [UIColor clearColor];
+}
+
+- (IBAction)goBackButtonPressed
+{
     [self.navigationController popViewControllerAnimated:YES];
 }
 
