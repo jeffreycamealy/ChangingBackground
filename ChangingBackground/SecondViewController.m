@@ -12,8 +12,8 @@
 
 @interface SecondViewController()
 
-@property (strong, nonatomic) IBOutlet BackgroundView *myView;
-@property (strong, nonatomic) IBOutlet UIButton *goBackButton;
+@property (nonatomic, strong) IBOutlet BackgroundView *myView;
+@property (nonatomic, strong) IBOutlet UIButton *goBackButton;
 
 @end
 
@@ -24,24 +24,21 @@
 
     [super viewWillAppear:YES];
 
+    self.myView.backgroundImage = [UIImage imageNamed:@"blue.png"];
+    self.myView.foregroundImage = [UIImage imageNamed:@"green.png"];
+
       // making the corners of the button round
 
     self.goBackButton.layer.cornerRadius = 10.0;
     self.goBackButton.clipsToBounds = YES;
      self.goBackButton.showsTouchWhenHighlighted = YES;
 
+    [self.goBackButton setBackgroundImage:[self imageWithColor:[UIColor colorWithRed:0/255 green:0/255 blue:204/255 alpha:1]] forState:UIControlStateHighlighted];
 
-
-    [self.goBackButton setBackgroundImage:[self imageWithColor:[UIColor colorWithRed:0/255 green:0/255 blue:204/255 alpha:1]]
-                                    forState:UIControlStateHighlighted];
-
-
-
-    self.myView.backgroundImage = [UIImage imageNamed:@"blue@2x.png"];
+ //   self.myView.backgroundImage = [UIImage imageNamed:@"blue.png"];
 
     // code for animating the foreground image
-
-    [self.myView animatingTheForegroundImagewithImage:[UIImage imageNamed:@"green@2x.png"]];
+    [self.myView animatingTheForegroundImage];
     
 }
 
