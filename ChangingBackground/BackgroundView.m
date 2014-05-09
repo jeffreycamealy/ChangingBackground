@@ -11,9 +11,8 @@
 
 
 @interface BackgroundView ()
-//@property (nonatomic, strong) IBOutlet UIImageView *backgroundImageView;
-//@property (nonatomic, strong) IBOutlet UIImageView *foregroundImageView;
 @property CGFloat foregroundAlpha;
+@property (strong, nonatomic) UIImageView *imageView;
 
 @end
 
@@ -33,17 +32,30 @@
     self = [super initWithCoder:aDecoder];
     if (self){
 
+        NSArray *subViews = [self subviews];
+        NSLog(@"subviews = %@", subViews);
+        id firstObject = subViews[0];
+
+        self.imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 320, 520)];
+
+        [self insertSubview:self.imageView belowSubview:firstObject];
+
+         NSLog(@"subviews = %@", subViews);
+
+
         self.foregroundAlpha = 0;
     }
     return self;
     
 }
 
-/*
 
 - (void) animatingTheForegroundImagewithImage : (UIImage *) image {
 
-    self.foregroundImageView.image = image;
+
+
+
+    self.imageView.image = image;
 
     CABasicAnimation *theAnimation;
 
@@ -51,38 +63,14 @@
 
     //theAnimation=[CABasicAnimation animationWithKeyPath:@"foregroundAlpha"];
     theAnimation=[CABasicAnimation animationWithKeyPath:@"opacity"];
-    theAnimation.duration=1.5;
+    theAnimation.duration=5.0;
 
     //changing the opacity (1=fully visible, 0=unvisible)
     
     theAnimation.fromValue=[NSNumber numberWithFloat:0.0];
     theAnimation.toValue=[NSNumber numberWithFloat:1.0];
-    [self.foregroundImageView.layer addAnimation:theAnimation
+    [self.imageView.layer addAnimation:theAnimation
                                                  forKey:@"animateOpacity"];
-
-}
- */
-
-- (void) animatingTheForegroundImage {
-
-
-
-    CABasicAnimation *theAnimation;
-
-
-
-    //within the animation we will adjust the "opacity"value of the layer
-
-    //theAnimation=[CABasicAnimation animationWithKeyPath:@"foregroundAlpha"];
-    theAnimation=[CABasicAnimation animationWithKeyPath:@"opacity"];
-    theAnimation.duration=6;
-
-
-    theAnimation.fromValue=[NSNumber numberWithFloat:0.0];
-    theAnimation.toValue=[NSNumber numberWithFloat:1.0];
-    [self.layer addAnimation:theAnimation
-                                          forKey:@"opacity"];
-
 
 
 }
@@ -93,41 +81,9 @@
     [super drawRect:rect];
     
     [self.backgroundImage drawInRect:rect];
-    [self.foregroundImage drawInRect:rect blendMode:0 alpha:self.foregroundAlpha];
+
 
 }
-
-//- (void) addSublayers {
-//
-//    self.layer.contents = (id) [UIImage imageNamed:@"green.png"].CGImage;
-//
-//    CALayer *sublayer = [CALayer layer];
-//    [self.layer addSublayer:sublayer];
-//
-//    //    sublayer.contents = (id) [UIImage imageNamed:@"blue.png"].CGImage;
-//
-//    CABasicAnimation *theAnimation;
-//
-//    //   self.foregroundImage = image;
-//
-//
-//    //within the animation we will adjust the "opacity"value of the layer
-//
-//    //theAnimation=[CABasicAnimation animationWithKeyPath:@"foregroundAlpha"];
-//    theAnimation=[CABasicAnimation animationWithKeyPath:@"opacity"];
-//    theAnimation.duration=6;
-//
-//
-//    theAnimation.fromValue=[NSNumber numberWithFloat:0.0];
-//    theAnimation.toValue=[NSNumber numberWithFloat:1.0];
-//    [self.layer.sublayers.firstObject addAnimation:theAnimation
-//                                            forKey:@"animateAlpha"];
-//    
-//    
-//    
-//}
-
-
 
 
 @end

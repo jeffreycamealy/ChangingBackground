@@ -25,7 +25,6 @@
     [super viewWillAppear:YES];
 
     self.myView.backgroundImage = [UIImage imageNamed:@"blue.png"];
-    self.myView.foregroundImage = [UIImage imageNamed:@"green.png"];
 
       // making the corners of the button round
 
@@ -35,10 +34,8 @@
 
     [self.goBackButton setBackgroundImage:[self imageWithColor:[UIColor colorWithRed:0/255 green:0/255 blue:204/255 alpha:1]] forState:UIControlStateHighlighted];
 
- //   self.myView.backgroundImage = [UIImage imageNamed:@"blue.png"];
-
     // code for animating the foreground image
-    [self.myView animatingTheForegroundImage];
+    [self.myView animatingTheForegroundImagewithImage:[UIImage imageNamed:@"green.png"]];
     
 }
 
