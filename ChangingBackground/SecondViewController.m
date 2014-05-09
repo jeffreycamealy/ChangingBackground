@@ -11,7 +11,21 @@
 
 @implementation SecondViewController
 
-- (IBAction)goBackButtonPressed {
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    
+    if (self) {
+        self.backgroundImage = [UIImage imageNamed:@"green.png"];
+    }
+    
+    return self;
+}
+
+
+- (IBAction)goBackButtonPressed
+{
     [self.navigationController popViewControllerAnimated:YES];
 }
 
