@@ -14,8 +14,5 @@
 
 - (void) animatingTheForegroundImagewithImage : (UIImage *) image;
 
-//- (void) animatingTheForegroundImage;
-
-//- (void) addSublayers;
 
 @end

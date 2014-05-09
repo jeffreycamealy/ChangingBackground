@@ -40,7 +40,7 @@
 
         [self insertSubview:self.imageView belowSubview:firstObject];
 
-         NSLog(@"subviews = %@", subViews);
+        NSLog(@"subviews = %@", subViews);
 
 
         self.foregroundAlpha = 0;
@@ -66,20 +66,20 @@
     theAnimation.duration=5.0;
 
     //changing the opacity (1=fully visible, 0=unvisible)
-    
+
     theAnimation.fromValue=[NSNumber numberWithFloat:0.0];
     theAnimation.toValue=[NSNumber numberWithFloat:1.0];
     [self.imageView.layer addAnimation:theAnimation
-                                                 forKey:@"animateOpacity"];
+                                forKey:@"animateOpacity"];
 
-
+    
 }
 
 
 - (void) drawRect:(CGRect)rect {
 
     [super drawRect:rect];
-    
+
     [self.backgroundImage drawInRect:rect];
 
 
