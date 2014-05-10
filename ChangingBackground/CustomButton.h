@@ -10,4 +10,8 @@
 
 @interface CustomButton : UIButton
 
+@property  BOOL itIsTheFirstViewController;
+@property  BOOL itIsTheSecondViewController;
+
+
 @end

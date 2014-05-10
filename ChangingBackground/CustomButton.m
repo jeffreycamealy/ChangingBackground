@@ -21,25 +21,49 @@
 
 - (void) setHighlighted:(BOOL)highlighted {
     [super setHighlighted:highlighted];
+    [self setNeedsDisplay];
 
-    if (highlighted) {
-        self.backgroundColor = [UIColor blueColor];
- //       self.titleLabel.textColor = [UIColor whiteColor];
-        self.titleLabel.tintColor = [UIColor whiteColor];
-    }
-    else {
-        self.backgroundColor = [UIColor whiteColor];
-        self.titleLabel.tintColor = [UIColor blueColor];
-    }
+
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
+- (void) drawRect:(CGRect)rect {
 
+    [super drawRect:rect];
+    if (self.highlighted){
+
+        //// Color Declarations
+        UIColor* color2 = [UIColor colorWithRed: 0 green: 0.629 blue: 1 alpha: 1];
+
+        //// Rectangle Drawing
+        UIBezierPath* rectanglePath = [UIBezierPath bezierPathWithRect: rect];
+        [color2 setFill];
+        [rectanglePath fill];
+
+
+        //// Text Drawing
+        CGRect textRect = CGRectMake(64, 53, 102, 12);
+        {
+            NSString* textContent;
+
+            if (self.itIsTheFirstViewController) {
+             textContent = @"Go Forward";
+                
+            } else if (self.itIsTheSecondViewController){
+                textContent = @"Go Back";
+
+
+            }
+            NSMutableParagraphStyle* textStyle = NSMutableParagraphStyle.defaultParagraphStyle.mutableCopy;
+            textStyle.alignment = NSTextAlignmentCenter;
+
+            NSDictionary* textFontAttributes = @{NSFontAttributeName: [UIFont fontWithName: @"Arial-BoldMT" size: UIFont.systemFontSize], NSForegroundColorAttributeName: UIColor.whiteColor, NSParagraphStyleAttributeName: textStyle};
+
+            [textContent drawInRect: CGRectOffset(textRect, 0, (CGRectGetHeight(textRect) - [textContent boundingRectWithSize: textRect.size options: NSStringDrawingUsesLineFragmentOrigin attributes: textFontAttributes context: nil].size.height) / 2) withAttributes: textFontAttributes];
+
+            
+        }
+
+
+    }
+}
 @end

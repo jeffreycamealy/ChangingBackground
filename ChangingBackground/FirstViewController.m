@@ -9,10 +9,12 @@
 #import "FirstViewController.h"
 #import "SecondViewController.h"
 #import "BackgroundView.h"
+#import "CustomButton.h"
 
 @interface FirstViewController ()
 @property (strong, nonatomic) IBOutlet BackgroundView *myView;
-@property (strong, nonatomic) IBOutlet UIButton *goForwardButton;
+@property (strong, nonatomic) IBOutlet CustomButton *goForwardButton;
+
 
 @end
 
@@ -26,6 +28,9 @@
    self.myView.backgroundImage = [UIImage imageNamed:@"green.png"];
 
     // making the corners of the button round
+
+    self.goForwardButton.itIsTheFirstViewController  = YES;
+    self.goForwardButton.itIsTheSecondViewController = NO;
 
     self.goForwardButton.layer.cornerRadius = 10.0;
     self.goForwardButton.clipsToBounds = YES;

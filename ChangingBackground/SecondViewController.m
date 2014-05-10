@@ -9,11 +9,13 @@
 #import "SecondViewController.h"
 #import "BackgroundView.h"
 #import <QuartzCore/QuartzCore.h>
+#import "CustomButton.h"
 
 @interface SecondViewController()
 
 @property (nonatomic, strong) IBOutlet BackgroundView *myView;
-@property (nonatomic, strong) IBOutlet UIButton *goBackButton;
+@property (strong, nonatomic) IBOutlet CustomButton *goBackButton;
+
 
 @end
 
@@ -28,11 +30,14 @@
 
       // making the corners of the button round
 
+    self.goBackButton.itIsTheFirstViewController  = NO;
+    self.goBackButton.itIsTheSecondViewController = YES;
+
     self.goBackButton.layer.cornerRadius = 10.0;
     self.goBackButton.clipsToBounds = YES;
+    [self.goBackButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
      self.goBackButton.showsTouchWhenHighlighted = YES;
 
-    [self.goBackButton setBackgroundImage:[self imageWithColor:[UIColor colorWithRed:0/255 green:0/255 blue:204/255 alpha:1]] forState:UIControlStateHighlighted];
 
     // code for animating the foreground image
     [self.myView animatingTheForegroundImagewithImage:[UIImage imageNamed:@"green.png"]];

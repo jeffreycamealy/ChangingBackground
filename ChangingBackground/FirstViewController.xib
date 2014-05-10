@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FirstViewController">
             <connections>
-                <outlet property="goForwardButton" destination="7" id="mSa-Vd-Q4e"/>
+                <outlet property="goForwardButton" destination="7" id="NKM-VV-LeF"/>
                 <outlet property="myView" destination="1" id="K2t-Km-kcF"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
@@ -24,11 +24,14 @@
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7" customClass="CustomButton">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7" customClass="CustomButton">
                     <rect key="frame" x="102" y="180" width="109" height="41"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="Go Forward"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="Go Forward">
+                        <color key="titleColor" red="0.29346442577106302" green="0.59355653981462297" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
                     <connections>
                         <action selector="goForwardButtonPressed" destination="-1" eventType="touchUpInside" id="8"/>
                     </connections>
