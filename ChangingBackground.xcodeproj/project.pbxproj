@@ -24,6 +24,9 @@
 		001809EC171C6764002D3E93 /* blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 001809E8171C6764002D3E93 /* blue@2x.png */; };
 		001809ED171C6764002D3E93 /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = 001809E9171C6764002D3E93 /* green.png */; };
 		001809EE171C6764002D3E93 /* green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 001809EA171C6764002D3E93 /* green@2x.png */; };
+		D1A9332D191AD3FB00104BD3 /* BackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A9332C191AD3FB00104BD3 /* BackgroundView.m */; };
+		D1A9332F191AF7E600104BD3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1A9332E191AF7E600104BD3 /* QuartzCore.framework */; };
+		D1DD5F3E191C71B300340540 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D1DD5F3D191C71B300340540 /* CustomButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,11 @@
 		001809E8171C6764002D3E93 /* blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue@2x.png"; sourceTree = "<group>"; };
 		001809E9171C6764002D3E93 /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
 		001809EA171C6764002D3E93 /* green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green@2x.png"; sourceTree = "<group>"; };
+		D1A9332B191AD3FB00104BD3 /* BackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundView.h; sourceTree = "<group>"; };
+		D1A9332C191AD3FB00104BD3 /* BackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundView.m; sourceTree = "<group>"; };
+		D1A9332E191AF7E600104BD3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D1DD5F3C191C71B300340540 /* CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomButton.h; sourceTree = "<group>"; };
+		D1DD5F3D191C71B300340540 /* CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1A9332F191AF7E600104BD3 /* QuartzCore.framework in Frameworks */,
 				001809B9171C637E002D3E93 /* UIKit.framework in Frameworks */,
 				001809BB171C637E002D3E93 /* Foundation.framework in Frameworks */,
 				001809BD171C637E002D3E93 /* CoreGraphics.framework in Frameworks */,
@@ -86,6 +95,7 @@
 		001809B7171C637E002D3E93 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D1A9332E191AF7E600104BD3 /* QuartzCore.framework */,
 				001809B8171C637E002D3E93 /* UIKit.framework */,
 				001809BA171C637E002D3E93 /* Foundation.framework */,
 				001809BC171C637E002D3E93 /* CoreGraphics.framework */,
@@ -96,6 +106,10 @@
 		001809BE171C637E002D3E93 /* ChangingBackground */ = {
 			isa = PBXGroup;
 			children = (
+				D1A9332B191AD3FB00104BD3 /* BackgroundView.h */,
+				D1A9332C191AD3FB00104BD3 /* BackgroundView.m */,
+				D1DD5F3C191C71B300340540 /* CustomButton.h */,
+				D1DD5F3D191C71B300340540 /* CustomButton.m */,
 				001809EF171C6768002D3E93 /* BackgroundImages */,
 				001809D5171C63FC002D3E93 /* AppDelegate */,
 				001809DC171C6453002D3E93 /* ViewControllers */,
@@ -238,9 +252,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1DD5F3E191C71B300340540 /* CustomButton.m in Sources */,
 				001809C5171C637E002D3E93 /* main.m in Sources */,
 				001809C9171C637E002D3E93 /* AppDelegate.m in Sources */,
 				001809D9171C6448002D3E93 /* FirstViewController.m in Sources */,
+				D1A9332D191AD3FB00104BD3 /* BackgroundView.m in Sources */,
 				001809E0171C64E4002D3E93 /* SecondViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,6 +372,7 @@
 				001809D4171C637E002D3E93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
