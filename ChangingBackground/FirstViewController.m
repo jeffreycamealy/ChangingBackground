@@ -15,7 +15,6 @@
 @property (strong, nonatomic) IBOutlet BackgroundView *myView;
 @property (strong, nonatomic) IBOutlet CustomButton *goForwardButton;
 
-
 @end
 
 @implementation FirstViewController
