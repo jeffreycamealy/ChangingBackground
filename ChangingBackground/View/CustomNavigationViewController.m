@@ -61,8 +61,9 @@
     if (!self.firstBackground) {
         self.firstBackground = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
         self.firstBackground.image = self.firstBgImage;
-        self.firstBackground.contentMode = UIViewContentModeScaleAspectFit;
+        self.firstBackground.contentMode = UIViewContentModeScaleAspectFill;
         self.firstBackground.alpha = 1;
+        self.firstBackground.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
         [self.view addSubview:self.firstBackground];
         [self.view sendSubviewToBack:self.firstBackground];
     }
@@ -70,8 +71,9 @@
     if (!self.secondBackground) {
         self.secondBackground = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
         self.secondBackground.image = self.secondBgImage;
-        self.secondBackground.contentMode = UIViewContentModeScaleAspectFit;
+        self.secondBackground.contentMode = UIViewContentModeScaleAspectFill;
         self.secondBackground.alpha = 0;
+        self.secondBackground.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
         [self.view addSubview:self.secondBackground];
         [self.view sendSubviewToBack:self.secondBackground];
     }
@@ -98,36 +100,71 @@
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    [super pushViewController:viewController animated:animated];
+    UIViewController *prevVw = self.topViewController;
+    [super pushViewController:viewController animated:NO];
     
     if (animated) {
+        CGFloat sw = self.view.bounds.size.width;
+        CGFloat sh = self.view.bounds.size.height;
+        viewController.view.frame = CGRectMake(sw, 0, sw, sh);
+        prevVw.view.frame = CGRectMake(0, 0, prevVw.view.frame.size.width, prevVw.view.frame.size.height);
+        [self.view addSubview:prevVw.view];
+        [UIView animateWithDuration:0.5
+                              delay:0
+                            options:(UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionAllowAnimatedContent)
+                         animations:^{
+                             prevVw.view.frame = CGRectMake(-prevVw.view.frame.size.width, 0, prevVw.view.frame.size.width, prevVw.view.frame.size.height);
+                         }
+                         completion:^(BOOL finished) {
+                             [prevVw.view removeFromSuperview];
+                         }];
+        [UIView animateWithDuration:0.5
+                              delay:0
+                            options:(UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionAllowAnimatedContent)
+                         animations:^{
+                             viewController.view.frame = CGRectMake(0, 0, viewController.view.frame.size.width, viewController.view.frame.size.height);
+                         }
+                         completion:^(BOOL finished) {
+                         }];
+        
+        // Background animations
         if ([viewController isKindOfClass:[BackgroundViewController class]]) {
             BackgroundViewController *bgvc = (BackgroundViewController *)viewController;
             self.secondBgImage = bgvc.backgroundImage;
             if (!self.secondBackground) {
                 self.secondBackground = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
                 self.secondBackground.image = self.secondBgImage;
-                self.secondBackground.contentMode = UIViewContentModeScaleAspectFit;
+                self.secondBackground.contentMode = UIViewContentModeScaleAspectFill;
                 self.secondBackground.alpha = 0;
+                self.secondBackground.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
             } else {
                 self.secondBackground.image = self.secondBgImage;
                 self.secondBackground.alpha = 0;
             }
         }
-        [UIView animateWithDuration:0.75
-                              delay:0.1
+        self.firstBackground.alpha = 1;
+        self.secondBackground.alpha = 0;
+        [self.view sendSubviewToBack:self.secondBackground];
+        [UIView animateWithDuration:0.5
+                              delay:0.5
                             options:(UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionAllowAnimatedContent)
                          animations:^{
                              self.firstBackground.alpha = 0;
+                         }
+                         completion:^(BOOL finished) {
+                         }];
+        [UIView animateWithDuration:0.5
+                              delay:0.5
+                            options:(UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionAllowAnimatedContent)
+                         animations:^{
                              self.secondBackground.alpha = 1;
                          }
                          completion:^(BOOL finished) {
                              self.firstBgImage = self.secondBgImage;
                              self.firstBackground.image = self.firstBgImage;
-                             self.secondBgImage = nil;
-                             self.secondBackground.image = nil;
                              self.firstBackground.alpha = 1;
                              self.secondBackground.alpha = 0;
+                             [self.view sendSubviewToBack:self.secondBackground];
                          }];
     }
 }
@@ -135,37 +172,69 @@
 
 - (UIViewController *)popViewControllerAnimated:(BOOL)animated
 {
-    UIViewController *vc = [super popViewControllerAnimated:animated];
+    UIViewController *vc = [super popViewControllerAnimated:NO];
     
     if (animated) {
         UIViewController *vct = self.topViewController;
+        vc.view.frame = CGRectMake(0, 0, vc.view.frame.size.width, vc.view.frame.size.height);
+        vct.view.frame = CGRectMake(-vct.view.frame.size.width, 0, vct.view.frame.size.width, vct.view.frame.size.height);
+        [self.view addSubview:vc.view];
+        [UIView animateWithDuration:0.5
+                              delay:0
+                            options:(UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionAllowAnimatedContent)
+                         animations:^{
+                             vc.view.frame = CGRectMake(vc.view.frame.size.width, 0, vc.view.frame.size.width, vc.view.frame.size.height);
+                         }
+                         completion:^(BOOL finished) {
+                             [vc.view removeFromSuperview];
+                         }];
+        [UIView animateWithDuration:0.5
+                              delay:0
+                            options:(UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionAllowAnimatedContent)
+                         animations:^{
+                             vct.view.frame = CGRectMake(0, 0, vct.view.frame.size.width, vct.view.frame.size.height);
+                         }
+                         completion:^(BOOL finished) {
+                         }];
+
+        // Background animations
         if ([vct isKindOfClass:[BackgroundViewController class]]) {
             BackgroundViewController *bgvc = (BackgroundViewController *)vct;
             self.secondBgImage = bgvc.backgroundImage;
             if (!self.secondBackground) {
                 self.secondBackground = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
                 self.secondBackground.image = self.secondBgImage;
-                self.secondBackground.contentMode = UIViewContentModeScaleAspectFit;
+                self.secondBackground.contentMode = UIViewContentModeScaleAspectFill;
                 self.secondBackground.alpha = 0;
+                self.secondBackground.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
             } else {
                 self.secondBackground.image = self.secondBgImage;
                 self.secondBackground.alpha = 0;
             }
         }
-        [UIView animateWithDuration:0.75
-                              delay:0.1
+        self.firstBackground.alpha = 1;
+        self.secondBackground.alpha = 0;
+        [self.view sendSubviewToBack:self.secondBackground];
+        [UIView animateWithDuration:0.5
+                              delay:0.5
                             options:(UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionAllowAnimatedContent)
                          animations:^{
                              self.firstBackground.alpha = 0;
+                         }
+                         completion:^(BOOL finished) {
+                         }];
+        [UIView animateWithDuration:0.5
+                              delay:0.5
+                            options:(UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionAllowAnimatedContent)
+                         animations:^{
                              self.secondBackground.alpha = 1;
                          }
                          completion:^(BOOL finished) {
                              self.firstBgImage = self.secondBgImage;
                              self.firstBackground.image = self.firstBgImage;
-                             self.secondBgImage = nil;
-                             self.secondBackground.image = nil;
                              self.firstBackground.alpha = 1;
                              self.secondBackground.alpha = 0;
+                             [self.view sendSubviewToBack:self.secondBackground];
                          }];
     }
     
@@ -175,37 +244,70 @@
 
 - (NSArray *)popToRootViewControllerAnimated:(BOOL)animated
 {
-    NSArray *vcArrays = [super popToRootViewControllerAnimated:animated];
+    UIViewController *vc = self.topViewController;
+    NSArray *vcArrays = [super popToRootViewControllerAnimated:NO];
     
     if (animated) {
-        UIViewController *vc = [vcArrays objectAtIndex:0];
-        if ([vc isKindOfClass:[BackgroundViewController class]]) {
-            BackgroundViewController *bgvc = (BackgroundViewController *)vc;
+        UIViewController *vct = [vcArrays objectAtIndex:0];
+        vc.view.frame = CGRectMake(0, 0, vc.view.frame.size.width, vc.view.frame.size.height);
+        vct.view.frame = CGRectMake(-vct.view.frame.size.width, 0, vct.view.frame.size.width, vct.view.frame.size.height);
+        [self.view addSubview:vc.view];
+        [UIView animateWithDuration:0.5
+                              delay:0
+                            options:(UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionAllowAnimatedContent)
+                         animations:^{
+                             vc.view.frame = CGRectMake(vc.view.frame.size.width, 0, vc.view.frame.size.width, vc.view.frame.size.height);
+                         }
+                         completion:^(BOOL finished) {
+                             [vc.view removeFromSuperview];
+                         }];
+        [UIView animateWithDuration:0.5
+                              delay:0
+                            options:(UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionAllowAnimatedContent)
+                         animations:^{
+                             vct.view.frame = CGRectMake(0, 0, vct.view.frame.size.width, vct.view.frame.size.height);
+                         }
+                         completion:^(BOOL finished) {
+                         }];
+        
+        // Background animations
+        if ([vct isKindOfClass:[BackgroundViewController class]]) {
+            BackgroundViewController *bgvc = (BackgroundViewController *)vct;
             self.secondBgImage = bgvc.backgroundImage;
             if (!self.secondBackground) {
                 self.secondBackground = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
                 self.secondBackground.image = self.secondBgImage;
-                self.secondBackground.contentMode = UIViewContentModeScaleAspectFit;
+                self.secondBackground.contentMode = UIViewContentModeScaleAspectFill;
                 self.secondBackground.alpha = 0;
+                self.secondBackground.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
             } else {
                 self.secondBackground.image = self.secondBgImage;
                 self.secondBackground.alpha = 0;
             }
         }
-        [UIView animateWithDuration:0.75
-                              delay:0.1
+        self.firstBackground.alpha = 1;
+        self.secondBackground.alpha = 0;
+        [self.view sendSubviewToBack:self.secondBackground];
+        [UIView animateWithDuration:0.5
+                              delay:0.5
                             options:(UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionAllowAnimatedContent)
                          animations:^{
                              self.firstBackground.alpha = 0;
+                         }
+                         completion:^(BOOL finished) {
+                         }];
+        [UIView animateWithDuration:0.5
+                              delay:0.5
+                            options:(UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionAllowAnimatedContent)
+                         animations:^{
                              self.secondBackground.alpha = 1;
                          }
                          completion:^(BOOL finished) {
                              self.firstBgImage = self.secondBgImage;
                              self.firstBackground.image = self.firstBgImage;
-                             self.secondBgImage = nil;
-                             self.secondBackground.image = nil;
                              self.firstBackground.alpha = 1;
                              self.secondBackground.alpha = 0;
+                             [self.view sendSubviewToBack:self.secondBackground];
                          }];
     }
     
@@ -215,37 +317,70 @@
 
 - (NSArray *)popToViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    NSArray *vcArrays = [super popToViewController:viewController animated:animated];
+    UIViewController *vc = self.topViewController;
+    NSArray *vcArrays = [super popToViewController:viewController animated:NO];
     
     if (animated) {
-        UIViewController *vc = viewController;
-        if ([vc isKindOfClass:[BackgroundViewController class]]) {
-            BackgroundViewController *bgvc = (BackgroundViewController *)vc;
+        UIViewController *vct = viewController;
+        vc.view.frame = CGRectMake(0, 0, vc.view.frame.size.width, vc.view.frame.size.height);
+        vct.view.frame = CGRectMake(-vct.view.frame.size.width, 0, vct.view.frame.size.width, vct.view.frame.size.height);
+        [self.view addSubview:vc.view];
+        [UIView animateWithDuration:0.5
+                              delay:0
+                            options:(UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionAllowAnimatedContent)
+                         animations:^{
+                             vc.view.frame = CGRectMake(vc.view.frame.size.width, 0, vc.view.frame.size.width, vc.view.frame.size.height);
+                         }
+                         completion:^(BOOL finished) {
+                             [vc.view removeFromSuperview];
+                         }];
+        [UIView animateWithDuration:0.5
+                              delay:0
+                            options:(UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionAllowAnimatedContent)
+                         animations:^{
+                             vct.view.frame = CGRectMake(0, 0, vct.view.frame.size.width, vct.view.frame.size.height);
+                         }
+                         completion:^(BOOL finished) {
+                         }];
+        
+        // Background animations
+        if ([vct isKindOfClass:[BackgroundViewController class]]) {
+            BackgroundViewController *bgvc = (BackgroundViewController *)vct;
             self.secondBgImage = bgvc.backgroundImage;
             if (!self.secondBackground) {
                 self.secondBackground = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
                 self.secondBackground.image = self.secondBgImage;
-                self.secondBackground.contentMode = UIViewContentModeScaleAspectFit;
+                self.secondBackground.contentMode = UIViewContentModeScaleAspectFill;
                 self.secondBackground.alpha = 0;
+                self.secondBackground.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
             } else {
                 self.secondBackground.image = self.secondBgImage;
                 self.secondBackground.alpha = 0;
             }
         }
-        [UIView animateWithDuration:0.75
-                              delay:0.1
+        self.firstBackground.alpha = 1;
+        self.secondBackground.alpha = 0;
+        [self.view sendSubviewToBack:self.secondBackground];
+        [UIView animateWithDuration:0.5
+                              delay:0.5
                             options:(UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionAllowAnimatedContent)
                          animations:^{
                              self.firstBackground.alpha = 0;
+                         }
+                         completion:^(BOOL finished) {
+                         }];
+        [UIView animateWithDuration:0.5
+                              delay:0.5
+                            options:(UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionAllowAnimatedContent)
+                         animations:^{
                              self.secondBackground.alpha = 1;
                          }
                          completion:^(BOOL finished) {
                              self.firstBgImage = self.secondBgImage;
                              self.firstBackground.image = self.firstBgImage;
-                             self.secondBgImage = nil;
-                             self.secondBackground.image = nil;
                              self.firstBackground.alpha = 1;
                              self.secondBackground.alpha = 0;
+                             [self.view sendSubviewToBack:self.secondBackground];
                          }];
     }
     
