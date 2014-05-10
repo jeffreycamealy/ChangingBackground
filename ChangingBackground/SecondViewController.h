@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BackgroundViewController.h"
 
-@interface SecondViewController : UIViewController
+@interface SecondViewController : BackgroundViewController
+
 
 - (IBAction)goBackButtonPressed;
 

@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "FirstViewController.h"
+#import "CustomNavigationViewController.h"
+
 
 @interface AppDelegate () {
     UIWindow *window;
@@ -22,7 +24,8 @@
     [window makeKeyAndVisible];
     
     FirstViewController *firstViewController = FirstViewController.new;
-    UINavigationController *navigationController = [UINavigationController.alloc initWithRootViewController:firstViewController];
+//    UINavigationController *navigationController = [UINavigationController.alloc initWithRootViewController:firstViewController];
+    CustomNavigationViewController *navigationController = [[CustomNavigationViewController alloc] initWithRootViewController:firstViewController];
     [navigationController setNavigationBarHidden:YES];
 
     window.rootViewController = navigationController;
