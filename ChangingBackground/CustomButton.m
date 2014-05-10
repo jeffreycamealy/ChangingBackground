@@ -8,6 +8,13 @@
 
 #import "CustomButton.h"
 
+@interface CustomButton()
+
+@property  BOOL itIsTheFirstViewController;
+@property  BOOL itIsTheSecondViewController;
+
+@end
+
 @implementation CustomButton
 
 - (id)initWithFrame:(CGRect)frame
@@ -25,6 +32,24 @@
 
 
 }
+
+- (void) indicatingItIsTheFirstViewControler {
+
+    self.itIsTheFirstViewController = YES;
+    self.itIsTheSecondViewController = NO;
+
+
+}
+- (void) indicatingItIsTheSecondViewController {
+
+    self.itIsTheSecondViewController = YES;
+    self.itIsTheFirstViewController = NO;
+
+
+}
+
+
+
 
 - (void) drawRect:(CGRect)rect {
 
@@ -48,7 +73,7 @@
             if (self.itIsTheFirstViewController) {
                 textContent = @"Go Forward";
 
-            } else if (self.itIsTheSecondViewController){
+            } else {
                 textContent = @"Go Back";
 
 

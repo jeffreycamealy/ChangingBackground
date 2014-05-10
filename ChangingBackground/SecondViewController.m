@@ -28,8 +28,7 @@
 
     self.myView.backgroundImage = [UIImage imageNamed:@"blue"];
 
-    self.goBackButton.itIsTheFirstViewController  = NO;
-    self.goBackButton.itIsTheSecondViewController = YES;
+    [self.goBackButton indicatingItIsTheSecondViewController];
 
     // making the corners of the button round
 

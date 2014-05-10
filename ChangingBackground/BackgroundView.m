@@ -45,18 +45,17 @@
 
     //within the animation we will adjust the "opacity"value of the layer
 
-    //theAnimation=[CABasicAnimation animationWithKeyPath:@"foregroundAlpha"];
     theAnimation=[CABasicAnimation animationWithKeyPath:@"opacity"];
-    theAnimation.duration=5.0;
+    theAnimation.duration=2;
 
     //changing the opacity (1=fully visible, 0=unvisible)
 
     theAnimation.fromValue=[NSNumber numberWithFloat:0.0];
     theAnimation.toValue=[NSNumber numberWithFloat:1.0];
+
     [self.imageView.layer addAnimation:theAnimation
                                 forKey:@"animateOpacity"];
 
-    
 }
 
 - (void) drawRect:(CGRect)rect {

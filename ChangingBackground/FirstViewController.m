@@ -26,9 +26,8 @@
 
     self.myView.backgroundImage = [UIImage imageNamed:@"green"];
 
-    self.goForwardButton.itIsTheFirstViewController  = YES;
-    self.goForwardButton.itIsTheSecondViewController = NO;
-
+    [self.goForwardButton indicatingItIsTheFirstViewControler];
+    
     // making the corners of the button round
 
     self.goForwardButton.layer.cornerRadius = 10.0;
