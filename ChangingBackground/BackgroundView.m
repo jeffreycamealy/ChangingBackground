@@ -31,7 +31,6 @@
 
         [self insertSubview:self.imageView belowSubview:firstObject];
 
-
     }
     return self;
     
