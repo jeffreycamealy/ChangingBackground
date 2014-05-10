@@ -31,23 +31,23 @@
     [super drawRect:rect];
     if (self.highlighted){
 
-        //// Color Declarations
+        // Color Declarations
         UIColor* color2 = [UIColor colorWithRed: 0 green: 0.629 blue: 1 alpha: 1];
 
-        //// Rectangle Drawing
+        // Rectangle Drawing
         UIBezierPath* rectanglePath = [UIBezierPath bezierPathWithRect: rect];
         [color2 setFill];
         [rectanglePath fill];
 
 
-        //// Text Drawing
+        // Text Drawing
         CGRect textRect = CGRectMake(64, 53, 102, 12);
         {
             NSString* textContent;
 
             if (self.itIsTheFirstViewController) {
-             textContent = @"Go Forward";
-                
+                textContent = @"Go Forward";
+
             } else if (self.itIsTheSecondViewController){
                 textContent = @"Go Back";
 
@@ -59,10 +59,8 @@
             NSDictionary* textFontAttributes = @{NSFontAttributeName: [UIFont fontWithName: @"Arial-BoldMT" size: UIFont.systemFontSize], NSForegroundColorAttributeName: UIColor.whiteColor, NSParagraphStyleAttributeName: textStyle};
 
             [textContent drawInRect: CGRectOffset(textRect, 0, (CGRectGetHeight(textRect) - [textContent boundingRectWithSize: textRect.size options: NSStringDrawingUsesLineFragmentOrigin attributes: textFontAttributes context: nil].size.height) / 2) withAttributes: textFontAttributes];
-
             
         }
-
 
     }
 }

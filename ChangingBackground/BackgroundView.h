@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong) UIImage *backgroundImage;
 
-- (void) animatingTheForegroundImagewithImage : (UIImage *) image;
+- (void) animatingTheForegroundImageWithImage : (UIImage *) image;
 
 
 @end

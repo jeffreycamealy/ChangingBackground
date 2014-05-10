@@ -24,41 +24,21 @@
 
     [super viewWillAppear:YES];
 
-
-   self.myView.backgroundImage = [UIImage imageNamed:@"green.png"];
-
-    // making the corners of the button round
+    self.myView.backgroundImage = [UIImage imageNamed:@"green"];
 
     self.goForwardButton.itIsTheFirstViewController  = YES;
     self.goForwardButton.itIsTheSecondViewController = NO;
+
+    // making the corners of the button round
 
     self.goForwardButton.layer.cornerRadius = 10.0;
     self.goForwardButton.clipsToBounds = YES;
     self.goForwardButton.showsTouchWhenHighlighted = YES;
     [self.goForwardButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
 
-    [self.myView animatingTheForegroundImagewithImage:[UIImage imageNamed:@"blue.png"]];
-
+    [self.myView animatingTheForegroundImageWithImage:[UIImage imageNamed:@"blue"]];
+    
 }
-
-// method is used to change the background color of the button when highlighted
-
-
-- (UIImage *)imageWithColor:(UIColor *)color
-{
-    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-
-    CGContextSetFillColorWithColor(context, [color CGColor]);
-    CGContextFillRect(context, rect);
-
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-
-    return image;
-}
-
 
 
 - (IBAction)goForwardButtonPressed {

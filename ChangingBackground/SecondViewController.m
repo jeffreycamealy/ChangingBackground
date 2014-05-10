@@ -26,45 +26,24 @@
 
     [super viewWillAppear:YES];
 
-    self.myView.backgroundImage = [UIImage imageNamed:@"blue.png"];
-
-      // making the corners of the button round
+    self.myView.backgroundImage = [UIImage imageNamed:@"blue"];
 
     self.goBackButton.itIsTheFirstViewController  = NO;
     self.goBackButton.itIsTheSecondViewController = YES;
 
+    // making the corners of the button round
+
     self.goBackButton.layer.cornerRadius = 10.0;
     self.goBackButton.clipsToBounds = YES;
     [self.goBackButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
-     self.goBackButton.showsTouchWhenHighlighted = YES;
+    self.goBackButton.showsTouchWhenHighlighted = YES;
 
 
     // code for animating the foreground image
-    [self.myView animatingTheForegroundImagewithImage:[UIImage imageNamed:@"green.png"]];
+
+    [self.myView animatingTheForegroundImageWithImage:[UIImage imageNamed:@"green"]];
     
 }
-
-// method is used to change the background color of the button when highlighted
-
-- (UIImage *)imageWithColor:(UIColor *)color
-{
-    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-
-    CGContextSetFillColorWithColor(context, [color CGColor]);
-    CGContextFillRect(context, rect);
-
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-
-    return image;
-}
-
-
-
-
-
 
 - (IBAction)goBackButtonPressed {
     [self.navigationController popViewControllerAnimated:YES];

@@ -11,21 +11,12 @@
 
 
 @interface BackgroundView ()
-@property CGFloat foregroundAlpha;
 @property (strong, nonatomic) UIImageView *imageView;
 
 @end
 
 @implementation BackgroundView
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-
-     }
-    return self;
-}
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
 
@@ -33,27 +24,21 @@
     if (self){
 
         NSArray *subViews = [self subviews];
-        NSLog(@"subviews = %@", subViews);
+
         id firstObject = subViews[0];
 
         self.imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 320, 520)];
 
         [self insertSubview:self.imageView belowSubview:firstObject];
 
-        NSLog(@"subviews = %@", subViews);
 
-
-        self.foregroundAlpha = 0;
     }
     return self;
     
 }
 
 
-- (void) animatingTheForegroundImagewithImage : (UIImage *) image {
-
-
-
+- (void) animatingTheForegroundImageWithImage : (UIImage *) image {
 
     self.imageView.image = image;
 
@@ -75,15 +60,12 @@
     
 }
 
-
 - (void) drawRect:(CGRect)rect {
 
     [super drawRect:rect];
 
     [self.backgroundImage drawInRect:rect];
 
-
 }
-
 
 @end
