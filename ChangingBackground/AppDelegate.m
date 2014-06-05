@@ -7,27 +7,47 @@
 //
 
 #import "AppDelegate.h"
+#import "TransitioningDelegate.h"
 #import "FirstViewController.h"
 
 @interface AppDelegate () {
-    UIWindow *window;
 }
+@property (nonatomic, strong) TransitioningDelegate *transitioningDelegate;
+
 @end
 
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    window = [UIWindow.alloc initWithFrame:UIScreen.mainScreen.bounds];
-    [window makeKeyAndVisible];
+    self.window = [UIWindow.alloc initWithFrame:UIScreen.mainScreen.bounds];
+    [self.window makeKeyAndVisible];
     
     FirstViewController *firstViewController = FirstViewController.new;
-    UINavigationController *navigationController = [UINavigationController.alloc initWithRootViewController:firstViewController];
-    [navigationController setNavigationBarHidden:YES];
-
-    window.rootViewController = navigationController;
+    
+    self.transitioningDelegate = [TransitioningDelegate new];
+    firstViewController.transitioningDelegate = self.transitioningDelegate;
+    self.window.rootViewController = firstViewController;
+    
+    self.blueBackground = [self imageWithImage:[UIImage imageNamed:@"blue"] scaledToSize:CGSizeMake(320, 568)];
+    self.greenBackground = [self imageWithImage:[UIImage imageNamed:@"green"] scaledToSize:CGSizeMake(320, 568)];
+    
+    self.window.backgroundColor = [UIColor colorWithPatternImage:self.blueBackground];
     
     return YES;
 }
 
+// the image sizes are too short for 4-inch
+- (UIImage*)imageWithImage:(UIImage*)image
+              scaledToSize:(CGSize)newSize
+{
+    UIGraphicsBeginImageContext( newSize );
+    [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
+
 @end
+

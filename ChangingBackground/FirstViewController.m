@@ -10,14 +10,23 @@
 #import "SecondViewController.h"
 
 @interface FirstViewController ()
-
+{
+    IBOutlet UIButton *goForwardButton;
+}
 @end
 
 @implementation FirstViewController
 
+-(void)viewDidLoad
+{
+    self.view.backgroundColor = [UIColor clearColor];
+    goForwardButton.layer.cornerRadius = 5.0;
+}
+
 - (IBAction)goForwardButtonPressed {
     SecondViewController *secondViewController = SecondViewController.new;
-    [self.navigationController pushViewController:secondViewController animated:YES];
+    secondViewController.transitioningDelegate = self.transitioningDelegate;
+    [self presentViewController:secondViewController animated:YES completion:nil];
 }
 
 @end
