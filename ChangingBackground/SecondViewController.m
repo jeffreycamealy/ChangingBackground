@@ -8,11 +8,19 @@
 
 #import "SecondViewController.h"
 
+@implementation SecondViewController 
+{
+    IBOutlet UIButton *goBackButton;
+}
 
-@implementation SecondViewController
+-(void)viewDidLoad
+{
+    self.view.backgroundColor = [UIColor clearColor];
+    goBackButton.layer.cornerRadius = 5.0;
+}
 
 - (IBAction)goBackButtonPressed {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
