@@ -10,6 +10,6 @@
 
 @interface SecondViewController : UIViewController
 
-- (IBAction)goBackButtonPressed;
+@property (weak, nonatomic) UIImage *backgroundImage;
 
 @end
