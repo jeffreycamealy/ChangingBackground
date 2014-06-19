@@ -21,6 +21,8 @@
     window = [UIWindow.alloc initWithFrame:UIScreen.mainScreen.bounds];
     [window makeKeyAndVisible];
     
+    window.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"blue"]];
+    
     FirstViewController *firstViewController = FirstViewController.new;
     UINavigationController *navigationController = [UINavigationController.alloc initWithRootViewController:firstViewController];
     [navigationController setNavigationBarHidden:YES];
