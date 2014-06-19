@@ -7,12 +7,33 @@
 //
 
 #import "SecondViewController.h"
+#import "UINavigationController+Retro.h"
 
 
 @implementation SecondViewController
 
 - (IBAction)goBackButtonPressed {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerRetro];
+}
+
+- (void) viewDidLoad {
+    [super viewDidLoad];
+    self.view.backgroundColor = [UIColor clearColor];
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
+    UIWindow* window = [UIApplication sharedApplication].keyWindow;
+    
+    //(WW) UIImageView window subviews added in AppDelegate
+    UIImageView* blueBackground = [[window subviews] objectAtIndex:0];
+    UIImageView* greenBackground = [[window subviews] objectAtIndex:1];
+    
+    [UIView animateWithDuration:1.5 delay:0.3 options:UIViewAnimationOptionTransitionNone animations:^{
+        blueBackground.alpha = 0.2;
+        greenBackground.alpha = 0.8;
+    } completion:NULL];
 }
 
 @end

@@ -14,11 +14,22 @@
 }
 @end
 
-
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     window = [UIWindow.alloc initWithFrame:UIScreen.mainScreen.bounds];
+    
+    UIImage* blueBackgroundImage = [UIImage imageNamed:@"blue.png"];
+    UIImageView* blueBackground = [[UIImageView alloc] initWithImage:blueBackgroundImage];
+    blueBackground.alpha = 0.8;
+    
+    UIImage* greenBackgroundImage = [UIImage imageNamed:@"green.png"];
+    UIImageView* greenBackground = [[UIImageView alloc] initWithImage:greenBackgroundImage];
+    greenBackground.alpha = 0.2;
+    
+    [window addSubview:blueBackground];
+    [window addSubview:greenBackground];
+    
     [window makeKeyAndVisible];
     
     FirstViewController *firstViewController = FirstViewController.new;
