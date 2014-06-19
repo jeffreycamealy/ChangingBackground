@@ -8,16 +8,44 @@
 
 #import "FirstViewController.h"
 #import "SecondViewController.h"
+#import "AppDelegate.h"
 
-@interface FirstViewController ()
 
-@end
 
 @implementation FirstViewController
+AppDelegate *delegate;
 
-- (IBAction)goForwardButtonPressed {
-    SecondViewController *secondViewController = SecondViewController.new;
-    [self.navigationController pushViewController:secondViewController animated:YES];
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self setUp1stViewControllerElements];
+
 }
 
+- (IBAction)goForwardButtonPressed {
+
+    SecondViewController *secondViewController = SecondViewController.new;
+    CATransition* transition = [CATransition animation];
+    transition.duration = 0.5;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionPush;
+    transition.subtype = kCATransitionFromRight;
+    [self.navigationController.view.layer addAnimation:transition forKey:nil];
+    [self.navigationController pushViewController:secondViewController animated:NO];
+}
+
+- (void)setUp1stViewControllerElements {
+    _goForwardButton.layer.cornerRadius = 10.0f;
+    _goForwardButton.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor clearColor];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+
+    [UIView transitionWithView:delegate.background duration:2.0f options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+
+        delegate.background.image = [UIImage imageNamed:@"blue"];
+    } completion:^(BOOL finished) {
+    }];
+}
 @end
