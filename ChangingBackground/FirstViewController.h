@@ -8,7 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol FirstViewControllerDelegate <NSObject>
+
+@optional
+- (void)segueToSecond;
+
+@end
+
 @interface FirstViewController : UIViewController
+
+@property (nonatomic, weak) id<FirstViewControllerDelegate> delegate;
 
 - (IBAction)goForwardButtonPressed;
 

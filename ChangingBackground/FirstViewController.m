@@ -15,9 +15,11 @@
 
 @implementation FirstViewController
 
-- (IBAction)goForwardButtonPressed {
-    SecondViewController *secondViewController = SecondViewController.new;
-    [self.navigationController pushViewController:secondViewController animated:YES];
+- (IBAction)goForwardButtonPressed
+{
+    if ([self.delegate respondsToSelector:@selector(segueToSecond)]) {
+        [self.delegate segueToSecond];
+    }
 }
 
 @end
