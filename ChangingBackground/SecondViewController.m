@@ -12,7 +12,9 @@
 @implementation SecondViewController
 
 - (IBAction)goBackButtonPressed {
-    [self.navigationController popViewControllerAnimated:YES];
+    if ([self.delegate respondsToSelector:@selector(segueToFirst)]) {
+        [self.delegate segueToFirst];
+    }
 }
 
 @end

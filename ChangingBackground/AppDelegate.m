@@ -9,23 +9,14 @@
 #import "AppDelegate.h"
 #import "FirstViewController.h"
 
-@interface AppDelegate () {
-    UIWindow *window;
-}
+@interface AppDelegate () 
 @end
 
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    window = [UIWindow.alloc initWithFrame:UIScreen.mainScreen.bounds];
-    [window makeKeyAndVisible];
     
-    FirstViewController *firstViewController = FirstViewController.new;
-    UINavigationController *navigationController = [UINavigationController.alloc initWithRootViewController:firstViewController];
-    [navigationController setNavigationBarHidden:YES];
-
-    window.rootViewController = navigationController;
     
     return YES;
 }

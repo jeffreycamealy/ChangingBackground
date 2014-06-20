@@ -8,7 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol SecondViewControllerDelegate <NSObject>
+
+@optional
+- (void)segueToFirst;
+
+@end
+
 @interface SecondViewController : UIViewController
+
+@property (nonatomic, weak) id<SecondViewControllerDelegate> delegate;
 
 - (IBAction)goBackButtonPressed;
 
