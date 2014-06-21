@@ -12,19 +12,24 @@
 		001809BD171C637E002D3E93 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001809BC171C637E002D3E93 /* CoreGraphics.framework */; };
 		001809C3171C637E002D3E93 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 001809C1171C637E002D3E93 /* InfoPlist.strings */; };
 		001809C5171C637E002D3E93 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 001809C4171C637E002D3E93 /* main.m */; };
-		001809C9171C637E002D3E93 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 001809C8171C637E002D3E93 /* AppDelegate.m */; };
 		001809CB171C637E002D3E93 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 001809CA171C637E002D3E93 /* Default.png */; };
 		001809CD171C637E002D3E93 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 001809CC171C637E002D3E93 /* Default@2x.png */; };
 		001809CF171C637E002D3E93 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 001809CE171C637E002D3E93 /* Default-568h@2x.png */; };
-		001809D9171C6448002D3E93 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 001809D7171C6448002D3E93 /* FirstViewController.m */; };
 		001809DA171C6448002D3E93 /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 001809D8171C6448002D3E93 /* FirstViewController.xib */; };
-		001809E0171C64E4002D3E93 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 001809DE171C64E3002D3E93 /* SecondViewController.m */; };
 		001809E1171C64E4002D3E93 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 001809DF171C64E3002D3E93 /* SecondViewController.xib */; };
-		001809EB171C6764002D3E93 /* blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 001809E7171C6764002D3E93 /* blue.png */; };
-		001809EC171C6764002D3E93 /* blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 001809E8171C6764002D3E93 /* blue@2x.png */; };
-		001809ED171C6764002D3E93 /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = 001809E9171C6764002D3E93 /* green.png */; };
-		001809EE171C6764002D3E93 /* green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 001809EA171C6764002D3E93 /* green@2x.png */; };
 		4159FE7519527B0800037B6D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4159FE7419527B0800037B6D /* QuartzCore.framework */; };
+		41D2BC2F1956392C00E9EC21 /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D2BC291956392C00E9EC21 /* green.png */; };
+		41D2BC301956392C00E9EC21 /* green-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D2BC2A1956392C00E9EC21 /* green-568h@2x.png */; };
+		41D2BC311956392C00E9EC21 /* green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D2BC2B1956392C00E9EC21 /* green@2x.png */; };
+		41D2BC321956392C00E9EC21 /* blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D2BC2C1956392C00E9EC21 /* blue@2x.png */; };
+		41D2BC331956392C00E9EC21 /* blue-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D2BC2D1956392C00E9EC21 /* blue-568h@2x.png */; };
+		41D2BC341956392C00E9EC21 /* blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D2BC2E1956392C00E9EC21 /* blue.png */; };
+		41D2BC391956394100E9EC21 /* BackgroundChangeTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D2BC361956394100E9EC21 /* BackgroundChangeTransition.m */; };
+		41D2BC3A1956394100E9EC21 /* NavigationControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D2BC381956394100E9EC21 /* NavigationControllerDelegate.m */; };
+		41D2BC3E1956397A00E9EC21 /* GenericViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D2BC3D1956397A00E9EC21 /* GenericViewController.m */; };
+		41D2BC41195639C400E9EC21 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D2BC40195639C400E9EC21 /* FirstViewController.m */; };
+		41D2BC43195639CD00E9EC21 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D2BC42195639CD00E9EC21 /* SecondViewController.m */; };
+		41D2BC4819563A9F00E9EC21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D2BC4719563A9F00E9EC21 /* AppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,21 +42,29 @@
 		001809C4171C637E002D3E93 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		001809C6171C637E002D3E93 /* ChangingBackground-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChangingBackground-Prefix.pch"; sourceTree = "<group>"; };
 		001809C7171C637E002D3E93 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		001809C8171C637E002D3E93 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		001809CA171C637E002D3E93 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		001809CC171C637E002D3E93 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		001809CE171C637E002D3E93 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		001809D6171C6448002D3E93 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		001809D7171C6448002D3E93 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		001809D8171C6448002D3E93 /* FirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstViewController.xib; sourceTree = "<group>"; };
-		001809DD171C64E3002D3E93 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		001809DE171C64E3002D3E93 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		001809DF171C64E3002D3E93 /* SecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
-		001809E7171C6764002D3E93 /* blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue.png; sourceTree = "<group>"; };
-		001809E8171C6764002D3E93 /* blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue@2x.png"; sourceTree = "<group>"; };
-		001809E9171C6764002D3E93 /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
-		001809EA171C6764002D3E93 /* green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green@2x.png"; sourceTree = "<group>"; };
 		4159FE7419527B0800037B6D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		41D2BC291956392C00E9EC21 /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
+		41D2BC2A1956392C00E9EC21 /* green-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green-568h@2x.png"; sourceTree = "<group>"; };
+		41D2BC2B1956392C00E9EC21 /* green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green@2x.png"; sourceTree = "<group>"; };
+		41D2BC2C1956392C00E9EC21 /* blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue@2x.png"; sourceTree = "<group>"; };
+		41D2BC2D1956392C00E9EC21 /* blue-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue-568h@2x.png"; sourceTree = "<group>"; };
+		41D2BC2E1956392C00E9EC21 /* blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue.png; sourceTree = "<group>"; };
+		41D2BC351956394100E9EC21 /* BackgroundChangeTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundChangeTransition.h; sourceTree = "<group>"; };
+		41D2BC361956394100E9EC21 /* BackgroundChangeTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundChangeTransition.m; sourceTree = "<group>"; };
+		41D2BC371956394100E9EC21 /* NavigationControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationControllerDelegate.h; sourceTree = "<group>"; };
+		41D2BC381956394100E9EC21 /* NavigationControllerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationControllerDelegate.m; sourceTree = "<group>"; };
+		41D2BC3D1956397A00E9EC21 /* GenericViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericViewController.m; sourceTree = "<group>"; };
+		41D2BC40195639C400E9EC21 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		41D2BC42195639CD00E9EC21 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		41D2BC4419563A2B00E9EC21 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		41D2BC4519563A3500E9EC21 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		41D2BC4619563A4100E9EC21 /* GenericViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericViewController.h; sourceTree = "<group>"; };
+		41D2BC4719563A9F00E9EC21 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +113,7 @@
 		001809BE171C637E002D3E93 /* ChangingBackground */ = {
 			isa = PBXGroup;
 			children = (
+				41D2BC3B1956395000E9EC21 /* Transition Related Classes */,
 				001809EF171C6768002D3E93 /* BackgroundImages */,
 				001809D5171C63FC002D3E93 /* AppDelegate */,
 				001809DC171C6453002D3E93 /* ViewControllers */,
@@ -126,7 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				001809C7171C637E002D3E93 /* AppDelegate.h */,
-				001809C8171C637E002D3E93 /* AppDelegate.m */,
+				41D2BC4719563A9F00E9EC21 /* AppDelegate.m */,
 			);
 			name = AppDelegate;
 			sourceTree = "<group>";
@@ -134,8 +148,8 @@
 		001809DB171C644A002D3E93 /* FirstViewController */ = {
 			isa = PBXGroup;
 			children = (
-				001809D6171C6448002D3E93 /* FirstViewController.h */,
-				001809D7171C6448002D3E93 /* FirstViewController.m */,
+				41D2BC4419563A2B00E9EC21 /* FirstViewController.h */,
+				41D2BC40195639C400E9EC21 /* FirstViewController.m */,
 				001809D8171C6448002D3E93 /* FirstViewController.xib */,
 			);
 			name = FirstViewController;
@@ -144,6 +158,7 @@
 		001809DC171C6453002D3E93 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				41D2BC3F1956397E00E9EC21 /* GenericViewControler */,
 				001809DB171C644A002D3E93 /* FirstViewController */,
 				001809E2171C650E002D3E93 /* SecondViewController */,
 			);
@@ -153,8 +168,8 @@
 		001809E2171C650E002D3E93 /* SecondViewController */ = {
 			isa = PBXGroup;
 			children = (
-				001809DD171C64E3002D3E93 /* SecondViewController.h */,
-				001809DE171C64E3002D3E93 /* SecondViewController.m */,
+				41D2BC4519563A3500E9EC21 /* SecondViewController.h */,
+				41D2BC42195639CD00E9EC21 /* SecondViewController.m */,
 				001809DF171C64E3002D3E93 /* SecondViewController.xib */,
 			);
 			name = SecondViewController;
@@ -163,12 +178,34 @@
 		001809EF171C6768002D3E93 /* BackgroundImages */ = {
 			isa = PBXGroup;
 			children = (
-				001809E7171C6764002D3E93 /* blue.png */,
-				001809E8171C6764002D3E93 /* blue@2x.png */,
-				001809E9171C6764002D3E93 /* green.png */,
-				001809EA171C6764002D3E93 /* green@2x.png */,
+				41D2BC291956392C00E9EC21 /* green.png */,
+				41D2BC2A1956392C00E9EC21 /* green-568h@2x.png */,
+				41D2BC2B1956392C00E9EC21 /* green@2x.png */,
+				41D2BC2C1956392C00E9EC21 /* blue@2x.png */,
+				41D2BC2D1956392C00E9EC21 /* blue-568h@2x.png */,
+				41D2BC2E1956392C00E9EC21 /* blue.png */,
 			);
 			name = BackgroundImages;
+			sourceTree = "<group>";
+		};
+		41D2BC3B1956395000E9EC21 /* Transition Related Classes */ = {
+			isa = PBXGroup;
+			children = (
+				41D2BC351956394100E9EC21 /* BackgroundChangeTransition.h */,
+				41D2BC361956394100E9EC21 /* BackgroundChangeTransition.m */,
+				41D2BC371956394100E9EC21 /* NavigationControllerDelegate.h */,
+				41D2BC381956394100E9EC21 /* NavigationControllerDelegate.m */,
+			);
+			name = "Transition Related Classes";
+			sourceTree = "<group>";
+		};
+		41D2BC3F1956397E00E9EC21 /* GenericViewControler */ = {
+			isa = PBXGroup;
+			children = (
+				41D2BC4619563A4100E9EC21 /* GenericViewController.h */,
+				41D2BC3D1956397A00E9EC21 /* GenericViewController.m */,
+			);
+			name = GenericViewControler;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,16 +259,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41D2BC2F1956392C00E9EC21 /* green.png in Resources */,
 				001809C3171C637E002D3E93 /* InfoPlist.strings in Resources */,
 				001809CB171C637E002D3E93 /* Default.png in Resources */,
 				001809CD171C637E002D3E93 /* Default@2x.png in Resources */,
+				41D2BC331956392C00E9EC21 /* blue-568h@2x.png in Resources */,
 				001809CF171C637E002D3E93 /* Default-568h@2x.png in Resources */,
 				001809DA171C6448002D3E93 /* FirstViewController.xib in Resources */,
+				41D2BC311956392C00E9EC21 /* green@2x.png in Resources */,
 				001809E1171C64E4002D3E93 /* SecondViewController.xib in Resources */,
-				001809EB171C6764002D3E93 /* blue.png in Resources */,
-				001809EC171C6764002D3E93 /* blue@2x.png in Resources */,
-				001809ED171C6764002D3E93 /* green.png in Resources */,
-				001809EE171C6764002D3E93 /* green@2x.png in Resources */,
+				41D2BC321956392C00E9EC21 /* blue@2x.png in Resources */,
+				41D2BC301956392C00E9EC21 /* green-568h@2x.png in Resources */,
+				41D2BC341956392C00E9EC21 /* blue.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,9 +282,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				001809C5171C637E002D3E93 /* main.m in Sources */,
-				001809C9171C637E002D3E93 /* AppDelegate.m in Sources */,
-				001809D9171C6448002D3E93 /* FirstViewController.m in Sources */,
-				001809E0171C64E4002D3E93 /* SecondViewController.m in Sources */,
+				41D2BC41195639C400E9EC21 /* FirstViewController.m in Sources */,
+				41D2BC43195639CD00E9EC21 /* SecondViewController.m in Sources */,
+				41D2BC3A1956394100E9EC21 /* NavigationControllerDelegate.m in Sources */,
+				41D2BC391956394100E9EC21 /* BackgroundChangeTransition.m in Sources */,
+				41D2BC3E1956397A00E9EC21 /* GenericViewController.m in Sources */,
+				41D2BC4819563A9F00E9EC21 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

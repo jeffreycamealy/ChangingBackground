@@ -7,22 +7,20 @@
 //
 
 #import "SecondViewController.h"
+#import "AppDelegate.h"
 
 
 @implementation SecondViewController
 
-- (void)viewDidAppear:(BOOL)animated
+
+- (void)viewDidLoad
 {
-    [super viewDidAppear:animated];
-    UIWindow *window = [[UIApplication sharedApplication] keyWindow];
-    
-    CATransition *transition = [CATransition animation];
-    transition.duration = 2;
-    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault];
-    transition.type = kCATransitionFade;
-    transition.subtype = kCATransitionFade;
-    [window.layer addAnimation:transition forKey:nil];
-    window.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"green"]];
+    [super viewDidLoad];
+    if (IS_IPHONE5) {
+        self.backgroundImageName = @"green-568h";
+    } else {
+        self.backgroundImageName = @"green";
+    }
 }
 
 - (IBAction)goBackButtonPressed {

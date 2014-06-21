@@ -1,0 +1,15 @@
+//
+//  BackgroundChangeTransition.h
+//  ChangingBackground
+//
+//  Created by Stenio Ferreira on 6/18/14.
+//  Copyright (c) 2014 Ora Interactive. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface BackgroundChangeTransition : NSObject <UIViewControllerAnimatedTransitioning>
+
+@property (nonatomic, assign) UINavigationControllerOperation navigationControllerOperation;
+
+@end

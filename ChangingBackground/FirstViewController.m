@@ -8,6 +8,7 @@
 
 #import "FirstViewController.h"
 #import "SecondViewController.h"
+#import "AppDelegate.h"
 
 @interface FirstViewController ()
 
@@ -15,24 +16,18 @@
 
 @implementation FirstViewController
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewDidLoad
 {
-    [super viewDidAppear:animated];
-    UIWindow *window = [[UIApplication sharedApplication] keyWindow];
-    
-    CATransition *transition = [CATransition animation];
-    transition.duration = 2;
-    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault];
-    transition.type = kCATransitionFade;
-    transition.subtype = kCATransitionFade;
-    [window.layer addAnimation:transition forKey:nil];
-    window.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"blue"]];
-    
+    [super viewDidLoad];
+    if (IS_IPHONE5) {
+        self.backgroundImageName = @"blue-568h";
+    } else {
+        self.backgroundImageName = @"blue";
+    }
 }
 
-
 - (IBAction)goForwardButtonPressed {
-    SecondViewController *secondViewController = SecondViewController.new;
+    SecondViewController *secondViewController = [[SecondViewController alloc]init];
     [self.navigationController pushViewController:secondViewController animated:YES];
 }
 

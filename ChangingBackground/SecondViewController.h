@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GenericViewController.h"
 
-@interface SecondViewController : UIViewController
+@interface SecondViewController : GenericViewController
 
 - (IBAction)goBackButtonPressed;
 
