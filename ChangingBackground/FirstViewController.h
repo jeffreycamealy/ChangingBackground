@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GenericViewController.h"
 
-@interface FirstViewController : UIViewController
+@interface FirstViewController : GenericViewController
 
 - (IBAction)goForwardButtonPressed;
 

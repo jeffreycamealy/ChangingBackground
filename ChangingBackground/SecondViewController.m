@@ -7,9 +7,21 @@
 //
 
 #import "SecondViewController.h"
+#import "AppDelegate.h"
 
 
 @implementation SecondViewController
+
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    if (IS_IPHONE5) {
+        self.backgroundImageName = @"green-568h";
+    } else {
+        self.backgroundImageName = @"green";
+    }
+}
 
 - (IBAction)goBackButtonPressed {
     [self.navigationController popViewControllerAnimated:YES];

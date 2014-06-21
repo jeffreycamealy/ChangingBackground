@@ -8,6 +8,7 @@
 
 #import "FirstViewController.h"
 #import "SecondViewController.h"
+#import "AppDelegate.h"
 
 @interface FirstViewController ()
 
@@ -15,8 +16,18 @@
 
 @implementation FirstViewController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    if (IS_IPHONE5) {
+        self.backgroundImageName = @"blue-568h";
+    } else {
+        self.backgroundImageName = @"blue";
+    }
+}
+
 - (IBAction)goForwardButtonPressed {
-    SecondViewController *secondViewController = SecondViewController.new;
+    SecondViewController *secondViewController = [[SecondViewController alloc]init];
     [self.navigationController pushViewController:secondViewController animated:YES];
 }
 
