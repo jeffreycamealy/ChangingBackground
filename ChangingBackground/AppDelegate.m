@@ -28,7 +28,7 @@
     [navigationController setNavigationBarHidden:YES];
 
     window.rootViewController = navigationController;
-    
+
     return YES;
 }
 

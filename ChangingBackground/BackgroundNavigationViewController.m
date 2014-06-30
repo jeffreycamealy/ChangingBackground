@@ -8,6 +8,7 @@
 
 #import "BackgroundNavigationViewController.h"
 #import "BackgroundImageViewController.h"
+#import "PushAnimator.h"
 
 @interface BackgroundNavigationViewController ()
 /// The view for the background image
@@ -16,6 +17,7 @@
 @property (strong, nonatomic) UIImageView *fadingBackgroundImageView;
 
 @end
+
 
 @implementation BackgroundNavigationViewController
 
@@ -74,5 +76,22 @@
     }];
   }
 }
+
+
+// Animation for the view transition
+-(id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
+                                 animationControllerForOperation:(UINavigationControllerOperation)operation
+                                              fromViewController:(UIViewController *)fromVC
+                                                toViewController:(UIViewController *)toVC {
+
+  PushAnimator *animator = [[PushAnimator alloc] init];
+
+  if (operation == UINavigationControllerOperationPop) {
+    // Popping a view off, so reverse the transition
+    animator.reverse = YES;
+  }
+  return animator;
+}
+
 
 @end
