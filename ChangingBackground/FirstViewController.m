@@ -15,6 +15,15 @@
 
 @implementation FirstViewController
 
+-(id)init {
+  self = [super init];
+  if (self) {
+    self.backgroundImage = [UIImage imageNamed:@"blue"];
+  }
+  return self;
+}
+
+
 - (IBAction)goForwardButtonPressed {
     SecondViewController *secondViewController = SecondViewController.new;
     [self.navigationController pushViewController:secondViewController animated:YES];
