@@ -11,7 +11,9 @@
 
 @interface BackgroundNavigationViewController ()
 /// The view for the background image
-@property (strong, nonatomic) UIImageView *backgroundImageView;
+@property (strong, nonatomic) UIImageView *mainBackgroundImageView;
+/// The view used as a placeholder for the NEW background image.
+@property (strong, nonatomic) UIImageView *fadingBackgroundImageView;
 
 @end
 
@@ -23,10 +25,15 @@
     // I'll handle this myself
     self.delegate = self;
 
-    // Add a background image
-    self.backgroundImageView = [[UIImageView alloc] initWithFrame:self.view.frame];
-    [self.view addSubview:self.backgroundImageView];
-    [self.view sendSubviewToBack:self.backgroundImageView];
+    // Add a background image view
+    self.mainBackgroundImageView = [[UIImageView alloc] initWithFrame:self.view.frame];
+    [self.view addSubview:self.mainBackgroundImageView];
+    [self.view sendSubviewToBack:self.mainBackgroundImageView];
+
+    // Add the other background image view, used for fading
+    self.fadingBackgroundImageView = [[UIImageView alloc] initWithFrame:self.view.frame];
+    [self.view addSubview:self.fadingBackgroundImageView];
+    [self.view sendSubviewToBack:self.fadingBackgroundImageView];
   }
   return self;
 }
@@ -39,9 +46,9 @@
   // If the background image is not set already, set it based on the view
   // controller that is about to show. This ensures that the first view controller
   // shown will have a background image.
-  if (!self.backgroundImageView.image && [viewController isKindOfClass:[BackgroundImageViewController class]]) {
+  if (!self.mainBackgroundImageView.image && [viewController isKindOfClass:[BackgroundImageViewController class]]) {
     BackgroundImageViewController *bgVC = (BackgroundImageViewController*)viewController;
-    self.backgroundImageView.image = bgVC.backgroundImage;
+    self.mainBackgroundImageView.image = bgVC.backgroundImage;
   }
 }
 
@@ -49,9 +56,22 @@
 // When a new view controller is shown, fade to that view controller's background image
 -(void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
   if ([viewController isKindOfClass:[BackgroundImageViewController class]]) {
-    // TODO fade
     BackgroundImageViewController *bgVC = (BackgroundImageViewController*)viewController;
-    self.backgroundImageView.image = bgVC.backgroundImage;
+
+    // Move the "fading" background image view in front of the main one, set
+    // it's background image, and make it clear for now
+    self.fadingBackgroundImageView.image = bgVC.backgroundImage;
+    self.fadingBackgroundImageView.alpha = 0.0;
+    [self.view sendSubviewToBack:self.mainBackgroundImageView];
+
+    [UIView animateWithDuration:1.0 animations:^{
+      // Fade in the new background
+      self.fadingBackgroundImageView.alpha = 1.0;
+    } completion:^(BOOL finished) {
+      // Once the fade is complete, set the "main" background to use the new image
+      self.mainBackgroundImageView.image = self.fadingBackgroundImageView.image;
+      [self.view sendSubviewToBack:self.fadingBackgroundImageView];
+    }];
   }
 }
 
