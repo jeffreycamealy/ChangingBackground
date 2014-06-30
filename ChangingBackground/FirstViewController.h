@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BackgroundImageViewController.h"
 
-@interface FirstViewController : UIViewController
+@interface FirstViewController : BackgroundImageViewController
 
 - (IBAction)goForwardButtonPressed;
 
