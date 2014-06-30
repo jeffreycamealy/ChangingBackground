@@ -11,12 +11,8 @@
 
 @implementation SecondViewController
 
--(id)init {
-  self = [super init];
-  if (self) {
-    self.backgroundImage = [UIImage imageNamed:@"green"];
-  }
-  return self;
+-(UIImage *)backgroundImage {
+  return [UIImage imageNamed:@"green"];
 }
 
 

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "FirstViewController.h"
+#import "BackgroundNavigationViewController.h"
 
 @interface AppDelegate () {
     UIWindow *window;
@@ -22,7 +23,8 @@
     [window makeKeyAndVisible];
     
     FirstViewController *firstViewController = FirstViewController.new;
-    UINavigationController *navigationController = [UINavigationController.alloc initWithRootViewController:firstViewController];
+
+    BackgroundNavigationViewController *navigationController = [BackgroundNavigationViewController.alloc initWithRootViewController:firstViewController];
     [navigationController setNavigationBarHidden:YES];
 
     window.rootViewController = navigationController;

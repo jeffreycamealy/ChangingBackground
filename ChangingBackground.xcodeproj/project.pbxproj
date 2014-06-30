@@ -24,7 +24,8 @@
 		001809EC171C6764002D3E93 /* blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 001809E8171C6764002D3E93 /* blue@2x.png */; };
 		001809ED171C6764002D3E93 /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = 001809E9171C6764002D3E93 /* green.png */; };
 		001809EE171C6764002D3E93 /* green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 001809EA171C6764002D3E93 /* green@2x.png */; };
-		465F1FEA1960F7C300F25C97 /* BackgroundImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 465F1FE91960F7C300F25C97 /* BackgroundImageViewController.m */; };
+		465F1FF01960FCC700F25C97 /* BackgroundNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 465F1FEF1960FCC700F25C97 /* BackgroundNavigationViewController.m */; };
+		465F1FF31960FF2400F25C97 /* BackgroundImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 465F1FF21960FF2400F25C97 /* BackgroundImageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,8 +52,10 @@
 		001809E8171C6764002D3E93 /* blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue@2x.png"; sourceTree = "<group>"; };
 		001809E9171C6764002D3E93 /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
 		001809EA171C6764002D3E93 /* green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green@2x.png"; sourceTree = "<group>"; };
-		465F1FE81960F7C300F25C97 /* BackgroundImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundImageViewController.h; sourceTree = "<group>"; };
-		465F1FE91960F7C300F25C97 /* BackgroundImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundImageViewController.m; sourceTree = "<group>"; };
+		465F1FEE1960FCC700F25C97 /* BackgroundNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundNavigationViewController.h; sourceTree = "<group>"; };
+		465F1FEF1960FCC700F25C97 /* BackgroundNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundNavigationViewController.m; sourceTree = "<group>"; };
+		465F1FF11960FF2400F25C97 /* BackgroundImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundImageViewController.h; sourceTree = "<group>"; };
+		465F1FF21960FF2400F25C97 /* BackgroundImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundImageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,10 +146,12 @@
 		001809DC171C6453002D3E93 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				465F1FF11960FF2400F25C97 /* BackgroundImageViewController.h */,
+				465F1FF21960FF2400F25C97 /* BackgroundImageViewController.m */,
 				001809DB171C644A002D3E93 /* FirstViewController */,
 				001809E2171C650E002D3E93 /* SecondViewController */,
-				465F1FE81960F7C300F25C97 /* BackgroundImageViewController.h */,
-				465F1FE91960F7C300F25C97 /* BackgroundImageViewController.m */,
+				465F1FEE1960FCC700F25C97 /* BackgroundNavigationViewController.h */,
+				465F1FEF1960FCC700F25C97 /* BackgroundNavigationViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -243,9 +248,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				465F1FF01960FCC700F25C97 /* BackgroundNavigationViewController.m in Sources */,
 				001809C5171C637E002D3E93 /* main.m in Sources */,
+				465F1FF31960FF2400F25C97 /* BackgroundImageViewController.m in Sources */,
 				001809C9171C637E002D3E93 /* AppDelegate.m in Sources */,
-				465F1FEA1960F7C300F25C97 /* BackgroundImageViewController.m in Sources */,
 				001809D9171C6448002D3E93 /* FirstViewController.m in Sources */,
 				001809E0171C64E4002D3E93 /* SecondViewController.m in Sources */,
 			);

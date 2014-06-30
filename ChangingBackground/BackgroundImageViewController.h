@@ -10,7 +10,11 @@
 
 @interface BackgroundImageViewController : UIViewController
 
-/// Image to shown behind the contents of the view controller
-@property (strong, nonatomic) UIImage *backgroundImage;
+/**
+ * Get the image to display behind the view controller
+ *
+ * @return Image to use in the background
+ */
+-(UIImage*)backgroundImage;
 
 @end

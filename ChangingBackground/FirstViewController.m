@@ -15,14 +15,9 @@
 
 @implementation FirstViewController
 
--(id)init {
-  self = [super init];
-  if (self) {
-    self.backgroundImage = [UIImage imageNamed:@"blue"];
-  }
-  return self;
+-(UIImage *)backgroundImage {
+  return [UIImage imageNamed:@"blue"];
 }
-
 
 - (IBAction)goForwardButtonPressed {
     SecondViewController *secondViewController = SecondViewController.new;
