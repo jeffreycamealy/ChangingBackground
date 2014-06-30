@@ -24,7 +24,7 @@
 -(id)initWithRootViewController:(UIViewController *)rootViewController {
   self = [super initWithRootViewController:rootViewController];
   if (self) {
-    // I'll handle this myself
+    // Handle transitions
     self.delegate = self;
 
     // Add a background image view
@@ -61,16 +61,17 @@
     BackgroundImageViewController *bgVC = (BackgroundImageViewController*)viewController;
 
     // Move the "fading" background image view in front of the main one, set
-    // it's background image, and make it clear for now
+    // its background image, and hide it for the moment.
     self.fadingBackgroundImageView.image = bgVC.backgroundImage;
     self.fadingBackgroundImageView.alpha = 0.0;
     [self.view sendSubviewToBack:self.mainBackgroundImageView];
 
     [UIView animateWithDuration:1.0 animations:^{
-      // Fade in the new background
+      // Fade in the new background by changing the alpha
       self.fadingBackgroundImageView.alpha = 1.0;
     } completion:^(BOOL finished) {
-      // Once the fade is complete, set the "main" background to use the new image
+      // Once the fade is complete, set the "main" background to use the new
+      // image, and move it in front of the fading view.
       self.mainBackgroundImageView.image = self.fadingBackgroundImageView.image;
       [self.view sendSubviewToBack:self.fadingBackgroundImageView];
     }];

@@ -153,10 +153,7 @@
 				465F1FF21960FF2400F25C97 /* BackgroundImageViewController.m */,
 				001809DB171C644A002D3E93 /* FirstViewController */,
 				001809E2171C650E002D3E93 /* SecondViewController */,
-				465F1FEE1960FCC700F25C97 /* BackgroundNavigationViewController.h */,
-				465F1FEF1960FCC700F25C97 /* BackgroundNavigationViewController.m */,
-				465F1FF419610A1900F25C97 /* PushAnimator.h */,
-				465F1FF519610A1900F25C97 /* PushAnimator.m */,
+				465F1FF719610E5A00F25C97 /* Nav Controller */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -180,6 +177,17 @@
 				001809EA171C6764002D3E93 /* green@2x.png */,
 			);
 			name = BackgroundImages;
+			sourceTree = "<group>";
+		};
+		465F1FF719610E5A00F25C97 /* Nav Controller */ = {
+			isa = PBXGroup;
+			children = (
+				465F1FEE1960FCC700F25C97 /* BackgroundNavigationViewController.h */,
+				465F1FEF1960FCC700F25C97 /* BackgroundNavigationViewController.m */,
+				465F1FF419610A1900F25C97 /* PushAnimator.h */,
+				465F1FF519610A1900F25C97 /* PushAnimator.m */,
+			);
+			name = "Nav Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
