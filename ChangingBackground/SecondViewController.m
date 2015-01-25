@@ -7,9 +7,30 @@
 //
 
 #import "SecondViewController.h"
+#import "AppDelegate.h"
 
 
 @implementation SecondViewController
+
+- (void)viewDidLoad {
+	[super viewDidLoad];
+	self.view.backgroundColor = [UIColor clearColor];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+	AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]
+											delegate];
+	
+	// Transition to the green background
+	[UIView transitionWithView:delegate.bgImageView
+					  duration:1.0f
+					   options:UIViewAnimationOptionTransitionCrossDissolve
+					animations:^{
+						delegate.bgImageView.image =
+						[UIImage imageNamed:@"green.png"];
+					}
+					completion:NULL];
+}
 
 - (IBAction)goBackButtonPressed {
     [self.navigationController popViewControllerAnimated:YES];
